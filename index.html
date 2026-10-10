@@ -10,8 +10,279 @@
   <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <style>
+/* Typo globale */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  color: #111;
+  background-color: #fafafa;
+}
+
+/* Conteneur principal */
+.page {
+  max-width: 800px;
+  margin: 40px auto 60px auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.header {
+  margin-bottom: 32px;
+}
+
+.name {
+  font-size: 2.2rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.links {
+  font-size: 0.95rem;
+}
+
+.links a {
+  color: #0055cc;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+.section {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.section-intro {
+  margin: 0 0 14px 0;
+  color: #444;
+}
+
+/* Timeline (Updates) */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline li {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.timeline .date {
+  min-width: 110px;
+  flex-shrink: 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.timeline .text {
+  font-size: 0.95rem;
+}
+
+/* Projects : filtres */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px 0;
+}
+
+.filter {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filter:hover {
+  border-color: #0055cc;
+  color: #0055cc;
+}
+
+.filter:focus-visible {
+  outline: 2px solid #0055cc;
+  outline-offset: 2px;
+}
+
+.filter.active {
+  background: #0055cc;
+  border-color: #0055cc;
+  color: #fff;
+}
+
+/* Projects : groupes */
+.project-group[hidden] {
+  display: none;
+}
+
+.project-group h3 {
+  margin: 26px 0 12px 0;
+  font-size: 1.05rem;
+  color: #0055cc;
+}
+
+/* Projects : fiches */
+.project {
+  margin-bottom: 20px;
+  padding-left: 12px;
+  border-left: 2px solid #e0e0e0;
+}
+
+.project h4 {
+  margin: 0 0 2px 0;
+  font-size: 1.02rem;
+}
+
+.project .meta {
+  margin: 0 0 6px 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.project p {
+  margin: 0 0 6px 0;
+}
+
+.project-points {
+  margin: 0 0 6px 0;
+  padding-left: 18px;
+  font-size: 0.95rem;
+}
+
+.project-points li {
+  margin-bottom: 3px;
+}
+
+.project .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 0 0;
+}
+
+.project .tags span {
+  font-size: 0.75rem;
+  padding: 1px 8px;
+  color: #444;
+  background: #eef1f6;
+  border-radius: 999px;
+}
+
+.project-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4px 0;
+}
+
+.project-links li {
+  margin-bottom: 2px;
+}
+
+.project-links a {
+  color: #0055cc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+/* Lists simples (Presentations) */
+.list {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Légère adaptation mobile */
+@media (max-width: 600px) {
+  .page {
+    margin-top: 24px;
+  }
+
+  .name {
+    font-size: 1.8rem;
+  }
+
+  .timeline {
+    font-size: 0.9rem;
+  }
+}
+
+/* Compétences / listes clé-valeur */
+.kv {
+  margin: 0;
+}
+
+.kv div {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.kv dt {
+  min-width: 130px;
+  flex-shrink: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.kv dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.sub {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.focus {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+  </style>
 </head>
 <body>
   <div class="page">
@@ -20,13 +291,14 @@
       <h1 class="name">DJERI-ALASSANI OUBENOUPOU</h1>
 
       <p class="subtitle">
-        Engineering student in AI & Data for Industrial Systems – ENSAM Meknès
+        Engineering student at École Centrale de Lyon – Double degree, Master in Fluid Mechanics and Energetics<br>
+        Engineering student in AI &amp; Data for Industrial Systems – ENSAM Meknès
       </p>
 
       <nav class="links">
         <a href="mailto:djeryala@gmail.com">Email</a>
         <span>·</span>
-        <a href="https://www.linkedin.com/in/o-djeri-a78854311/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/oubenoupou-djeri-alassani-a78854311/" target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
         <span>·</span>
@@ -44,17 +316,22 @@
       </nav>
     </header>
 
-    <!-- ABOUT / DESCRIPTION -->
+    <!-- ABOUT -->
     <section id="about" class="section">
       <h2>About</h2>
       <p>
-        I am an engineering student in Artificial Intelligence and Data Technology for Industrial Systems
-        at ENSAM Meknès. I am interested in reinforcement learning, mobile robotics, computer vision and
-        applied machine learning for industrial environments.
+        I am an engineering student at École Centrale de Lyon, following a double degree with a Master in
+        Mechanics (Fluid Mechanics and Energetics), after the engineering cycle in Industrial Engineering,
+        AI and Data Technologies at ENSAM Meknès.
       </p>
       <p>
-         I enjoy turning complex technical ideas into clear tools, demos and
-        teaching material.
+        My interests cover turbomachinery, energetics and thermal engineering, numerical simulation of flows,
+        aerodynamics and aeroacoustics, combined with machine learning and data tools for industrial environments.
+        I enjoy turning complex technical ideas into clear tools, demos and teaching material.
+      </p>
+      <p>
+        I am looking for a 6-month end-of-studies internship starting in April 2027, ideally in research and
+        development. Based in Lyon, mobile across metropolitan France.
       </p>
     </section>
 
@@ -63,25 +340,88 @@
       <h2>Updates</h2>
       <ul class="timeline">
         <li>
-          <span class="date">August-september 2025</span>
+          <span class="date">October 2026</span>
           <span class="text">
-            internship at ASAIGE-PAL , learn about entrerise way of working , problems in security and safty Of the airport ranked first in West Africa, second in Africa, and third in the world in terms of airport security. Proposal for a solution for traceability and monitoring of items whose use and import are regulated.   
+            Master design project on the numerical simulation of flows at École Centrale de Lyon: conservative
+            schemes (Roe, Lax-Wendroff, Lax) applied to the traffic-flow equation, in Matlab.
           </span>
         </li>
         <li>
-          <span class="date">september 2024 - juily 2027</span>
+          <span class="date">2026</span>
           <span class="text">
-            École Nationale Supérieure d'Arts et Métiers (ENSAM-Méknes /MOULAYE ISMAIL UNIVERSITY)<br>
-            Engineering degree, ARTIFICIAL INTELLIGENCE AND DATA TECHNOLOGIES: INDUSTRIAL SYSTEM
+            Volunteer at the Fête de la science, École Centrale de Lyon: guided visits of the supersonic and
+            subsonic wind tunnels and helped with registrations.
+          </span>
+        </li>
+        <li>
+          <span class="date">2026</span>
+          <span class="text">
+            Certified in first aid (Brevet Premiers secours de la planète, Institut de l'Engagement and CNRS).
+          </span>
+        </li>
+        <li>
+          <span class="date">April 2026</span>
+          <span class="text">
+            Two vibration-analysis labs at ENSAM Meknès: unbalance identification and diagnosis of a rolling bearing.
+          </span>
+        </li>
+      </ul>
+    </section>
 
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <ul class="timeline">
+        <li>
+          <span class="date">2026 – 2027</span>
+          <span class="text">
+            <strong>Double degree – École Centrale de Lyon</strong>, Écully, France<br>
+            Master in Mechanics (M2), Fluid Mechanics and Energetics track, co-accredited by Université Lyon 1 and Mines Saint-Étienne.<br>
+            Courses: numerical simulation of flows, turbulence, flow stability, aerodynamics and energetics of turbomachinery, aeroacoustics, nuclear energy, mixing and chaos.<br>
+            Higher-education diploma: Eco-design and Innovation Engineer, Transport, Mobility and Decarbonisation option.
           </span>
         </li>
         <li>
-          <span class="date">october 2022 - june 2024</span>
+          <span class="date">2024 – 2027</span>
           <span class="text">
-            Sultan Moulay Slimane University<br>
-            Diploma of Scientific and Technical University Studies (DEUST), Mathematics- Computer Science -Physics<br>
-            Activities and associations: Member of CESTOM Béni Mellal 
+            <strong>Engineering cycle, Industrial Engineering – AI and Data Technologies option</strong><br>
+            École nationale supérieure d'arts et métiers (ENSAM), Meknès, Morocco<br>
+            Courses: fluid mechanics and thermal machines, heat transfer and turbomachinery, machine learning and reinforcement learning, time series, Lean Six Sigma.
+          </span>
+        </li>
+        <li>
+          <span class="date">2022 – 2024</span>
+          <span class="text">
+            <strong>DEUST MIP: Mathematics, Computer Science, Physics</strong> – with honours (mention Bien)<br>
+            Faculty of Sciences and Techniques, Sultan Moulay Slimane University, Béni Mellal, Morocco
+          </span>
+        </li>
+        <li>
+          <span class="date">2021 – 2022</span>
+          <span class="text">
+            <strong>Baccalauréat, série D</strong> – with high honours (mention Très Bien)<br>
+            Lycée Anne &amp; Albert, Togo
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <h2>Professional experience</h2>
+      <ul class="timeline">
+        <li>
+          <span class="date">2025<br><span class="sub">2 months</span></span>
+          <span class="text">
+            <strong>Data Analyst Intern (Business Intelligence)</strong> – Technocolabs Softwares, IT company (remote, India)<br>
+            Processed and analysed data; built Power BI dashboards to support decision-making.
+          </span>
+        </li>
+        <li>
+          <span class="date">2025<br><span class="sub">1 month</span></span>
+          <span class="text">
+            <strong>Engineering Intern – Digitalisation &amp; Data Science</strong> – Airport and Port Security Authority of Lomé, Togo<br>
+            Analysed the need, then designed a web application (phpMyAdmin) for the traceability of regulated items, replacing manual registers.
           </span>
         </li>
       </ul>
@@ -116,7 +456,7 @@
         </article>
         <article class="project" data-cat="mech">
           <h4>Mechanical Seal Test Bench: Transmission Design</h4>
-          <p class="meta">2024 – 2025 · ENSAM Meknès · Machine elements &amp; architecture · team of 3</p>
+          <p class="meta">11/2024 · ENSAM Meknès · Machine elements &amp; architecture · team of 3</p>
           <p>Sizing of the transmission of a test bench for mechanical seals (rotating-shaft sealing elements found in pumps), with a sectional assembly drawing.</p>
           <ul class="project-points">
             <li>Force balance (statics, torsors) and sizing of <strong>keys</strong>, <strong>motor</strong> (3.3 kW) and <strong>rolling bearings</strong> according to their rated life L<sub>10h</sub>.</li>
@@ -388,6 +728,31 @@
       </div>
     </section>
 
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <dl class="kv">
+        <div><dt>CAD software</dt><dd>SolidWorks, Creo, Fusion 360</dd></div>
+        <div><dt>Programming</dt><dd>Matlab, C, Python</dd></div>
+        <div><dt>Office</dt><dd>Microsoft Office (Word, Excel, PowerPoint)</dd></div>
+        <div><dt>Other tools</dt><dd>Power BI</dd></div>
+        <div><dt>Languages</dt><dd>French (native), English (B2)</dd></div>
+        <div><dt>Soft skills</dt><dd>Rigour and analytical mind, autonomy and curiosity, intercultural adaptability, team spirit, emotional intelligence</dd></div>
+        <div><dt>Interests</dt><dd>Personal development, cooking and travel</dd></div>
+      </dl>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
+      <h2>Certifications</h2>
+      <ul class="list">
+        <li>Brevet Premiers secours de la planète – Institut de l'Engagement and CNRS, 2026</li>
+        <li>Fundamentals of Reinforcement Learning – University of Alberta, 2025</li>
+        <li>Neural Networks – DeepLearning.AI, 2024</li>
+        <li>Python Programming Certification – CESAM Béni Mellal, 2023</li>
+      </ul>
+    </section>
+
     <!-- PRESENTATIONS -->
     <section id="presentations" class="section">
       <h2>Presentations</h2>
@@ -398,10 +763,9 @@
         <li>
           <strong>AI introduction</strong><br>
           <a href="https://1drv.ms/p/c/b72c0bb5b1708789/EXJcUg6OWhhAt2B_mEomF5AB2ZEE0pAMkgvdm9nbFdbvnw?e=OlocWN" target="_blank" rel="noopener noreferrer">
-            View the presentation 
+            View the presentation
           </a>
         </li>
-        
         <!-- Ajoute d’autres <li> pour tes cours -->
       </ul>
     </section>
