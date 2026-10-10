@@ -24,8 +24,7 @@
       </p>
 
       <nav class="links">
-        <!-- Remplace les href par tes vrais liens -->
-        <a href="djeryala@gmail.com">Email</a>
+        <a href="mailto:djeryala@gmail.com">Email</a>
         <span>·</span>
         <a href="https://www.linkedin.com/in/o-djeri-a78854311/" target="_blank" rel="noopener noreferrer">
           LinkedIn
@@ -33,10 +32,6 @@
         <span>·</span>
         <a href="https://github.com/ZIADEA" target="_blank" rel="noopener noreferrer">
           GitHub
-        </a>
-        <span>·</span>
-        <a href="https://youtube.com/@jerryct?si=nlLhvsqaDQ__EwUG" target="_blank" rel="noopener noreferrer">
-          Youtube
         </a>
         <span>·</span>
         <a href="https://medium.com/@djeryala" target="_blank" rel="noopener noreferrer">
@@ -67,7 +62,6 @@
     <section id="updates" class="section">
       <h2>Updates</h2>
       <ul class="timeline">
-        <!-- Exemple d’update (tu modifieras les dates / textes) -->
         <li>
           <span class="date">August-september 2025</span>
           <span class="text">
@@ -91,72 +85,307 @@
           </span>
         </li>
       </ul>
-      <!-- Quand tu auras de vrais posts Medium ou annonces de projets,
-           tu peux écrire des updates plus ciblées ici. -->
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="section">
       <h2>Projects</h2>
-      
-      <!--
-      Projet 1 : exemple
-      <article class="project">
-        <h3>Autonomous Mobile Robot Navigation in Simulation</h3>
-        <p class="meta">
-          Webots · Path Planning · Obstacle Avoidance · Reinforcement Learning
-        </p>
-        <p>
-          Simulation of an autonomous mobile robot in structured environments, combining classical path-planning
-          techniques with learning-based navigation. Focus on clean software architecture and reproducible experiments.
-        </p>
-        <ul class="project-links">
-          <li>
-        <a href="https://medium.com/@TON_COMPTE/autonomous-robot-navigation-example" target="_blank" rel="noopener noreferrer">
-          Article Medium (technical write-up)
-        </a>
-          </li>
-          <li>
-        <a href="https://github.com/TON_GITHUB/robot-navigation-project" target="_blank" rel="noopener noreferrer">
-          Code source sur GitHub
-        </a>
-          </li>
-          <li>
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener noreferrer">
-          Demo video
-        </a>
-          </li>
-        </ul>
-      </article>
-      -->
+      <p class="section-intro">
+        Selected academic, internship and personal projects, from rotating-machinery diagnosis and numerical
+        methods to machine learning and software tools.
+      </p>
 
-      <!-- Projet 2 : exemple -->
-      <!-- 
-      <article class="project">
-        <h3>Generative Design for Mechanical Components</h3>
-        <p class="meta">
-          Fusion 360 · Generative Design · Finite Element Analysis · Multi-objective Optimization
-        </p>
-        <p>
-          Exploration of generative design workflows for mechanical parts, integrating CAD, structural
-          analysis and AI-assisted design exploration to reach lightweight yet robust geometries.
-        </p>
-        <ul class="project-links">
-          <li>
-        <a href="https://medium.com/@TON_COMPTE/generative-design-example" target="_blank" rel="noopener noreferrer">
-          Article Medium (design and methodology)
-        </a>
-          </li>
-          <li>
-        <a href="https://github.com/TON_GITHUB/generative-design-project" target="_blank" rel="noopener noreferrer">
-          Code / scripts / CAD files
-        </a>
-          </li>
-        </ul>
-      </article>
-      -->
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" class="filter active" data-filter="all">All</button>
+        <button type="button" class="filter" data-filter="mech">Mechanics &amp; numerics</button>
+        <button type="button" class="filter" data-filter="ai">AI &amp; data</button>
+        <button type="button" class="filter" data-filter="sw">Software &amp; applied AI</button>
+        <button type="button" class="filter" data-filter="misc">Fundamentals</button>
+      </div>
 
-      <!-- Tu pourras ajouter d’autres <article class="project"> ici -->
+      <div class="project-group" data-group="mech">
+        <h3>Mechanics, vibrations &amp; numerical methods</h3>
+        <article class="project" data-cat="mech">
+          <h4>Numerical Simulation of Flows (Master design project)</h4>
+          <p class="meta">10/2026 · École Centrale de Lyon · Master in Mechanics</p>
+          <p>Finite-difference resolution of the traffic-flow equation (a non-linear conservation law) with conservative schemes.</p>
+          <ul class="project-points">
+            <li>Roe, Lax-Wendroff and Lax schemes implemented in Matlab and compared with the exact solution (method of characteristics) on rarefaction, compression, shock and queue-of-vehicles cases.</li>
+          </ul>
+          <p class="tags"><span>Matlab</span><span>CFD</span><span>Conservative schemes</span><span>Roe</span><span>Lax-Wendroff</span></p>
+        </article>
+        <article class="project" data-cat="mech">
+          <h4>Mechanical Seal Test Bench: Transmission Design</h4>
+          <p class="meta">2024 – 2025 · ENSAM Meknès · Machine elements &amp; architecture · team of 3</p>
+          <p>Sizing of the transmission of a test bench for mechanical seals (rotating-shaft sealing elements found in pumps), with a sectional assembly drawing.</p>
+          <ul class="project-points">
+            <li>Force balance (statics, torsors) and sizing of <strong>keys</strong>, <strong>motor</strong> (3.3 kW) and <strong>rolling bearings</strong> according to their rated life L<sub>10h</sub>.</li>
+            <li>26-page report and hand-drawn assembly drawing; analytical calculations based on manufacturer catalogues.</li>
+          </ul>
+          <p class="tags"><span>Solid mechanics</span><span>Rotating machinery</span><span>Bearings</span><span>Sizing</span></p>
+        </article>
+        <article class="project" data-cat="mech">
+          <h4>Vibration Lab 1: Unbalance Identification</h4>
+          <p class="meta">04/2026 · ENSAM Meknès · Predictive maintenance by AI module · team of 5</p>
+          <p>Identification of an unbalance on a power-transmission test bench using a stroboscope and spectral analysis.</p>
+          <ul class="project-points">
+            <li>Measurement of the rotation frequency (24.88 Hz for 25 Hz theoretical) and vibration levels on 3 axes; <strong>spectral peak at the rotation frequency</strong>, characteristic of unbalance.</li>
+            <li>Severity assessed according to <strong>ISO 10816</strong>: 6.15 mm/s in the radial direction, above the alarm threshold.</li>
+          </ul>
+          <p class="tags"><span>Vibrations</span><span>Unbalance</span><span>FFT</span><span>ISO 10816</span></p>
+        </article>
+        <article class="project" data-cat="mech">
+          <h4>Vibration Lab 2: SKF 6206 Bearing Diagnosis</h4>
+          <p class="meta">04/2026 · ENSAM Meknès · Predictive maintenance by AI module · team of 5</p>
+          <p>Diagnosis of a rolling bearing from FFT spectra and defect frequencies, then effect of a two-plane unbalance.</p>
+          <ul class="project-points">
+            <li>Computed the bearing <strong>defect frequencies</strong> (outer race 71.4 Hz, ball 92.4 Hz, inner race 108.6 Hz) and compared them with the spectra measured at 6 points; defect <strong>confirmed after disassembly</strong> (wear and corrosion).</li>
+            <li>With added unbalance, RMS velocity increased by 17 to 88&nbsp;% depending on the measuring point, with a peak at the rotation frequency and its harmonics.</li>
+          </ul>
+          <p class="tags"><span>Vibrations</span><span>Bearings</span><span>Diagnosis</span><span>FFT</span></p>
+        </article>
+        <article class="project" data-cat="mech">
+          <h4>Statistical Process Control Lab</h4>
+          <p class="meta">03/2026 · ENSAM Meknès · pair work</p>
+          <p>X̄–R and p control charts and capability analysis with SPSS.</p>
+          <ul class="project-points">
+            <li>Control charts and capability indices (Cp, Cpk); mean range R̄ reduced by 39&nbsp;% after improvement (15.88 g to 9.62 g).</li>
+            <li>Manual calculations systematically cross-checked against SPSS output.</li>
+          </ul>
+          <p class="tags"><span>Quality</span><span>SPC</span><span>Statistics</span><span>SPSS</span></p>
+        </article>
+        <article class="project" data-cat="mech">
+          <h4>Numerical Analysis in Matlab (Labs 1–4)</h4>
+          <p class="meta">2022 – 2024 · Faculty of Sciences and Techniques, Béni Mellal · DEUST MIP</p>
+          <p>Matlab library of interpolation, numerical integration and root-finding, validated against exact solutions.</p>
+          <ul class="project-points">
+            <li><strong>Composite Simpson</strong>: error 1.6·10<sup>-8</sup> (n = 10) versus 4.2·10<sup>-2</sup> for composite rectangles on ∫<sub>0</sub><sup>1</sup> sin x dx.</li>
+            <li>Roots of e<sup>x</sup> − 1 + x = 0: <strong>Newton</strong> in 3 iterations, secant in 4, bisection in 11; 45-page report.</li>
+          </ul>
+          <p class="tags"><span>Matlab</span><span>Numerical analysis</span><span>Integration</span><span>Interpolation</span></p>
+        </article>
+      </div>
+
+      <div class="project-group" data-group="ai">
+        <h3>AI, predictive maintenance &amp; data science</h3>
+        <article class="project" data-cat="ai">
+          <h4>AI Maintenance: Predictive Maintenance Web Platform</h4>
+          <p class="meta">Personal project</p>
+          <p>Web application for predictive maintenance: vibration analysis, dashboards and model training tracked with MLflow.</p>
+          <ul class="project-points">
+            <li>Vibration diagnosis rules (<strong>RMS</strong>, crest factor, kurtosis, FFT, bearing frequencies BPFO/BPFI) and PDF reports.</li>
+            <li>Learning pipeline (Random Forest, XGBoost, LightGBM, CatBoost) tracked with <strong>MLflow</strong>; FastAPI backend, React interface, SQLite database.</li>
+          </ul>
+          <p class="tags"><span>Predictive maintenance</span><span>Vibrations</span><span>FastAPI</span><span>MLflow</span><span>React</span></p>
+        </article>
+        <article class="project" data-cat="ai">
+          <h4>Anomaly Detection with Java and WEKA</h4>
+          <p class="meta">05/2025 · ENSAM Meknès · Java expert module</p>
+          <p>Java application detecting anomalies with KMeans on bearing sensor data.</p>
+          <ul class="project-points">
+            <li>Normalisation, <strong>KMeans</strong> with the number of clusters chosen by silhouette score, PCA projection; 156 of 2,156 records isolated (7.2&nbsp;%).</li>
+            <li>Swing interface, serialised model, automatic PDF report and executable JAR; 8-page report.</li>
+          </ul>
+          <p class="tags"><span>Anomaly detection</span><span>Clustering</span><span>Java</span><span>WEKA</span></p>
+        </article>
+        <article class="project" data-cat="ai">
+          <h4>Reinforcement Learning Labs</h4>
+          <p class="meta">11/2025 · ENSAM Meknès · 5 lab sessions</p>
+          <p>Dynamic programming, Q-Learning, DQN and PPO on grid environments and classic control tasks.</p>
+          <ul class="project-points">
+            <li>Value/Policy Iteration, <strong>Q-Learning</strong>, DQN (PyTorch) and <strong>PPO</strong> (Stable-Baselines3); sensitivity study over the discount factor (11 values × 5 seeds) reaching the theoretical optimum (≈ +32) on a 10×10 grid.</li>
+            <li>PPO reaches the maximum CartPole score (500) within 30,000 steps; failure on the moving-goal task traced to an incomplete observation.</li>
+          </ul>
+          <p class="tags"><span>Reinforcement learning</span><span>Deep RL</span><span>PyTorch</span><span>Stable-Baselines3</span></p>
+        </article>
+        <article class="project" data-cat="ai">
+          <h4>M5 Sales Forecasting</h4>
+          <p class="meta">2025 · Google Colab notebook</p>
+          <p>Time-series study on 59 million rows: stationarity, ARIMA and recurrent networks.</p>
+          <ul class="project-points">
+            <li>ADF, Phillips-Perron and KPSS tests, differencing, ACF/PACF and <strong>ARIMA(4,1,5)</strong>.</li>
+            <li>RNN/LSTM/GRU models on the aggregated 1,941-day series.</li>
+          </ul>
+          <p class="tags"><span>Time series</span><span>ARIMA</span><span>LSTM</span><span>Python</span></p>
+        </article>
+        <article class="project" data-cat="ai">
+          <h4>Sleep Health and Lifestyle</h4>
+          <p class="meta">2025 · Google Colab notebook</p>
+          <p>Regression, KNN, KMeans and DBSCAN on 400 profiles.</p>
+          <ul class="project-points">
+            <li>Five regression models (negative result: R² ≈ 0, no usable correlation), <strong>KNN</strong> classification at 94&nbsp;% (equal to the majority-class share), clustering with silhouette and PCA.</li>
+          </ul>
+          <p class="tags"><span>Machine learning</span><span>scikit-learn</span><span>Clustering</span></p>
+        </article>
+        <article class="project" data-cat="ai">
+          <h4>Machine Learning Notebooks (MY-AI-REPERT)</h4>
+          <p class="meta">2024 – 2025 · Four Jupyter notebooks</p>
+          <p>Regression, hand-coded logistic regression, trees, neural networks and PCA.</p>
+          <ul class="project-points">
+            <li><strong>Gradient descent</strong> and logistic regression coded with NumPy and compared to scikit-learn (identical R² = 0.6393 on a surface/price dataset).</li>
+            <li>Non-linear boundaries through polynomial features: rings from 53.2 to 99.3&nbsp;%, moons at 98&nbsp;% on test data.</li>
+          </ul>
+          <p class="tags"><span>Machine learning</span><span>NumPy</span><span>scikit-learn</span><span>TensorFlow</span></p>
+        </article>
+        <article class="project" data-cat="ai">
+          <h4>Dimensionality Reduction with PCA</h4>
+          <p class="meta">Notebook on loan data</p>
+          <p>PCA coded with NumPy on lending data and compared with scikit-learn.</p>
+          <ul class="project-points">
+            <li>Standardisation, <strong>covariance matrix</strong>, eigenvalues and eigenvectors, projection; 29 components for 95&nbsp;% of cumulative variance.</li>
+          </ul>
+          <p class="tags"><span>PCA</span><span>Linear algebra</span><span>NumPy</span></p>
+        </article>
+        <article class="project" data-cat="ai">
+          <h4>Employee Attrition Analysis</h4>
+          <p class="meta">06/2025 · Technocolabs internship · 18-page report</p>
+          <p>Statistical analysis and comparison of 5 classification models on 1,470 employees.</p>
+          <ul class="project-points">
+            <li>Statistical tests (Cramér's V, chi-squared, ANOVA), selection of 15 and 32 variables, grid-search optimisation and 5-fold cross-validation.</li>
+          </ul>
+          <p class="tags"><span>Data analysis</span><span>scikit-learn</span><span>XGBoost</span><span>Statistics</span></p>
+        </article>
+        <article class="project" data-cat="ai">
+          <h4>SmartWebScraper-CV</h4>
+          <p class="meta">06/2025 · ENSAM Meknès · Computer Vision module · 34-page report</p>
+          <p>Flask application detecting regions of web pages (Faster R-CNN), with OCR and NLP.</p>
+          <ul class="project-points">
+            <li>Dataset of about 2,700 collected screenshots, about 200 annotated (COCO format, 18 classes); <strong>Faster R-CNN</strong> with Detectron2.</li>
+            <li>Retraining loop with human validation; PaddleOCR, TF-IDF, spaCy and language-model pipeline.</li>
+          </ul>
+          <p class="tags"><span>Computer vision</span><span>Detectron2</span><span>OCR</span><span>NLP</span></p>
+        </article>
+      </div>
+
+      <div class="project-group" data-group="sw">
+        <h3>Software engineering &amp; applied AI</h3>
+        <article class="project" data-cat="sw">
+          <h4>CityPulse Logistics: Delivery Route Optimisation</h4>
+          <p class="meta">2025 – 2026 · ENSAM Meknès · team of 2</p>
+          <p>Application for delivery route planning (vehicle routing with time windows), comparing 3 algorithms, with embedded AI.</p>
+          <ul class="project-points">
+            <li>Comparison of a greedy heuristic, <strong>2-opt</strong> and <strong>Google OR-Tools</strong>; OSRM road distances with Haversine fallback; driving-time constraints (EC 561/2006).</li>
+            <li>Demand forecasting (ARIMA), anomaly detection (Isolation Forest), natural-language assistant; 24-table database, synchronised Django web portal, 193 tests.</li>
+          </ul>
+          <p class="tags"><span>Optimisation</span><span>VRP</span><span>OR-Tools</span><span>PyQt6</span><span>Django</span></p>
+        </article>
+        <article class="project" data-cat="sw">
+          <h4>SoutenanceAI: AI-assisted Defence Grading</h4>
+          <p class="meta">2025 – 2026 · ENSAM Meknès · Digital Web Prototyping module · individual</p>
+          <p>Django platform grading oral defences with AI: live transcription and criteria-based grading, backed by 270 automated tests.</p>
+          <ul class="project-points">
+            <li>Whisper transcription, <strong>WebSocket</strong> broadcast, LLM grading with 49 jury styles; 5 languages including Arabic.</li>
+            <li>Validation over 21 repeated calls: 8.25-point gap between the most extreme styles, standard deviation ≤ 1.00.</li>
+          </ul>
+          <p class="tags"><span>Django</span><span>LLM</span><span>WebSocket</span><span>Automated testing</span></p>
+        </article>
+        <article class="project" data-cat="sw">
+          <h4>AITHINKDESIGN: AI-augmented Product Design</h4>
+          <p class="meta">2025 – 2026 · ENSAM Meknès · Trade projects · team of 2</p>
+          <p>Workshop platform where AI agents assist design (Design Thinking, SCAMPER, TRIZ), from the need to the specification document.</p>
+          <ul class="project-points">
+            <li>Workshops with 10 simultaneous users completed in 4 min 32 s (figure reported in the project report); validated by a design engineer on 3 real projects.</li>
+          </ul>
+          <p class="tags"><span>Product design</span><span>TRIZ</span><span>Next.js</span><span>FastAPI</span></p>
+        </article>
+        <article class="project" data-cat="sw">
+          <h4>AI Prototyping Studio and FreeCAD Agent</h4>
+          <p class="meta">01/2026 · ENSAM Meknès · technical report</p>
+          <p>AI-assisted prototyping studio and a conversational agent driving FreeCAD through a Python bridge.</p>
+          <ul class="project-points">
+            <li>34 CAD actions, 23 bridge routes and 6 export formats.</li>
+          </ul>
+          <p class="tags"><span>CAD</span><span>FreeCAD</span><span>Generative AI</span><span>Python</span></p>
+        </article>
+        <article class="project" data-cat="sw">
+          <h4>EduForge: Educational Platform with RAG</h4>
+          <p class="meta">Java / Spring Boot</p>
+          <p>Educational platform generating quizzes through retrieval-augmented generation (pgvector, Gemini).</p>
+          <ul class="project-points">
+            <li>154 Java classes and 35 tables; RAG pipeline (900-character chunks, 768-dimension vectors, top 5 by cosine similarity) and adaptive difficulty.</li>
+          </ul>
+          <p class="tags"><span>Java</span><span>Spring Boot</span><span>RAG</span><span>pgvector</span></p>
+        </article>
+        <article class="project" data-cat="sw">
+          <h4>DJERIPERFUM: Perfume Shop and Recommendation Chatbot</h4>
+          <p class="meta">10 – 12/2025 · AI module</p>
+          <p>Streamlit shop (104 references) with a Botpress recommendation chatbot.</p>
+          <ul class="project-points">
+            <li>Recommendation by <strong>weighted score</strong>, 5 conversational flows, Instagram integration; 25-slide presentation.</li>
+          </ul>
+          <p class="tags"><span>Streamlit</span><span>Chatbot</span><span>Recommender system</span></p>
+        </article>
+        <article class="project" data-cat="sw">
+          <h4>Tasty Recipe Master</h4>
+          <p class="meta">Web project · team of 2</p>
+          <p>Recipe website in PHP, MySQL (PDO) and Bootstrap, with search and validated forms.</p>
+          <ul class="project-points">
+            <li>Relational database (recipes, users, messages, newsletter), 50 recipes from RecipeNLG, documented deployment.</li>
+          </ul>
+          <p class="tags"><span>PHP</span><span>MySQL</span><span>Bootstrap</span></p>
+        </article>
+        <article class="project" data-cat="sw">
+          <h4>NEBULA STRIKE: 2D Space Shooter with Behavioural AI</h4>
+          <p class="meta">2026 · ENSAM Meknès · Games and behavioural AI lab</p>
+          <p>2D shooter in Pygame featuring behavioural AI.</p>
+          <ul class="project-points">
+            <li>5-state enemy machine, <strong>A*</strong> pathfinding, 16-agent swarm (boids), adaptive difficulty; about 3,000 lines, 10 levels.</li>
+          </ul>
+          <p class="tags"><span>Pygame</span><span>A*</span><span>Boids</span><span>Behavioural AI</span></p>
+        </article>
+        <article class="project" data-cat="sw">
+          <h4>tkinter-lab: 8-ball Billiards with a 2D Physics Engine</h4>
+          <p class="meta">Three Python/Tkinter applications</p>
+          <p>Billiards game with a 2D physics engine (collisions, friction), plus a dice simulator and Snake.</p>
+          <ul class="project-points">
+            <li>Explicit integration with 3 sub-steps, ball collisions (restitution ≈ 0.92), <strong>exponential friction</strong>, first-contact prediction; 2 standalone Windows executables.</li>
+          </ul>
+          <p class="tags"><span>2D physics</span><span>Collisions</span><span>Python</span></p>
+        </article>
+      </div>
+
+      <div class="project-group" data-group="misc">
+        <h3>Programming fundamentals &amp; other</h3>
+        <article class="project" data-cat="misc">
+          <h4>C Programming Labs</h4>
+          <p class="meta">2022 – 2023 · Faculty of Sciences and Techniques, Béni Mellal · pair work</p>
+          <p>Algorithmics in C: arrays, matrices, Horner scheme, circular queue, linked list.</p>
+          <ul class="project-points">
+            <li>Programs checked against reference examples; dynamic allocation (malloc, free).</li>
+          </ul>
+          <p class="tags"><span>C</span><span>Algorithmics</span><span>Pointers</span></p>
+        </article>
+        <article class="project" data-cat="misc">
+          <h4>R Programming Labs</h4>
+          <p class="meta">15 exercises</p>
+          <p>Matrices, data frames, dplyr, functions and loops in R.</p>
+          <ul class="project-points">
+            <li>Matrix computation, data filtering and sorting, CSV import/export.</li>
+          </ul>
+          <p class="tags"><span>R</span><span>dplyr</span></p>
+        </article>
+        <article class="project" data-cat="misc">
+          <h4>CESAM Treasury App</h4>
+          <p class="meta">Python / Kivy</p>
+          <p>Desktop application managing membership fees and expenses, with persistent storage.</p>
+          <ul class="project-points">
+            <li>Three classes, balance computation, histories and automatic saving (about 280 lines).</li>
+          </ul>
+          <p class="tags"><span>Python</span><span>Kivy</span><span>OOP</span></p>
+        </article>
+        <article class="project" data-cat="misc">
+          <h4>Beauté Parfumée</h4>
+          <p class="meta">HTML / CSS</p>
+          <p>Static catalogue page for 71 perfumes, responsive and without JavaScript.</p>
+          <p class="tags"><span>HTML5</span><span>CSS3</span></p>
+        </article>
+        <article class="project" data-cat="misc">
+          <h4>3D Character Modelling in Blender</h4>
+          <p class="meta">2026 · Lab 3</p>
+          <p>Character built from front and side blueprints, using Mirror symmetry and surface subdivision.</p>
+          <p class="tags"><span>Blender</span><span>3D modelling</span></p>
+        </article>
+      </div>
     </section>
 
     <!-- PRESENTATIONS -->
@@ -177,33 +406,6 @@
       </ul>
     </section>
 
-    <!-- YOUTUBE VIDEOS -->
-    <section id="videos" class="section">
-      <h2>YouTube Videos</h2>
-      <p>
-        Short demos and explanations of my projects. I use these videos both as communication material and
-        as a way to validate that my systems behave as expected.
-      </p>
-
-      <div class="video-grid">
-        <!-- Exemple de vidéo YouTube : remplace VIDEO_ID -->
-        <div class="video-item">
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID_1"
-              title="YouTube video demo 1"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <p class="video-caption">
-            ----------
-          </p>
-        </div>
-
-      </div>
-    </section>
-
     <footer class="footer">
       <p>
         © <span id="year"></span> DJERI-ALASSANI OUBENOUPOU
@@ -214,6 +416,21 @@
   <script>
     // Met automatiquement l’année dans le footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Filtre des projets par famille
+    (function () {
+      var buttons = document.querySelectorAll('.filter');
+      var groups = document.querySelectorAll('.project-group');
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var f = btn.getAttribute('data-filter');
+          buttons.forEach(function (b) { b.classList.toggle('active', b === btn); });
+          groups.forEach(function (g) {
+            g.hidden = !(f === 'all' || g.getAttribute('data-group') === f);
+          });
+        });
+      });
+    })();
   </script>
 </body>
 </html>
