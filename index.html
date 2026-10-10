@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="fr">
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="robots" content="noindex,nofollow">
@@ -14,6 +14,9 @@ h3 { font-size: 13px; color: #003366; margin-top: 18px; }
 ul { margin-top: 3px; margin-bottom: 5px; }
 .menu a { display: block; padding: 3px 6px; text-decoration: none; }
 .menu a:hover { background-color: #FFFFFF; text-decoration: underline; }
+.langs a { color: #FFFFFF; }
+.show-en .fr { display: none; }
+.show-fr .en { display: none; }
 </style>
 <script type="text/javascript">
 var groups = new Array('mech', 'ai', 'sw', 'misc');
@@ -29,17 +32,41 @@ function showGroup(name) {
     }
   }
 }
+
+function setLang(lang) {
+  document.body.className = 'show-' + lang;
+  document.documentElement.lang = lang;
+  document.getElementById('lang_fr').style.fontWeight = (lang == 'fr') ? 'bold' : 'normal';
+  document.getElementById('lang_en').style.fontWeight = (lang == 'en') ? 'bold' : 'normal';
+  try {
+    window.localStorage.setItem('portfolio_lang', lang);
+  } catch (e) {
+  }
+}
+
+function initLang() {
+  var lang = null;
+  try {
+    lang = window.localStorage.getItem('portfolio_lang');
+  } catch (e) {
+  }
+  if (lang != 'fr' && lang != 'en') {
+    var nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    lang = (nav.indexOf('fr') == 0) ? 'fr' : 'en';
+  }
+  setLang(lang);
+}
 </script>
 </head>
-<body bgcolor="#FFFFFF" text="#000000" link="#003399" vlink="#663399" alink="#CC0000">
+<body class="show-en" bgcolor="#FFFFFF" text="#000000" link="#003399" vlink="#663399" alink="#CC0000" onload="initLang();">
 <a name="top"></a>
 
 <table align="center" width="900" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td colspan="2" bgcolor="#003366" style="padding: 14px;">
+      <div class="langs" align="right"><font size="2" color="#FFFFFF"><a id="lang_fr" href="javascript:setLang('fr')">Français</a> | <a id="lang_en" href="javascript:setLang('en')">English</a></font></div>
       <font face="Verdana, Arial, Helvetica, sans-serif" size="5" color="#FFFFFF"><b>DJERI-ALASSANI OUBENOUPOU</b></font><br>
-      <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#CCDDEE">Engineering student at École Centrale de Lyon, double degree Master in Fluid Mechanics and Energetics<br>
-      Engineering student at ENSAM Meknès</font><br><br>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#CCDDEE"><span class="en">Engineering student at École Centrale de Lyon, double degree Master in Fluid Mechanics and Energetics<br>Engineering student at ENSAM Meknès</span><span class="fr">Élève ingénieure à l'École Centrale de Lyon, double cursus Master Mécanique des Fluides et Énergétique<br>Élève ingénieure à l'ENSAM Meknès</span></font><br><br>
       <font size="2" color="#FFFFFF"><a href="mailto:djeryala@gmail.com"><font color="#FFFFFF">Email</font></a> |
       <a href="https://www.linkedin.com/in/oubenoupou-djeri-alassani-a78854311/" target="_blank"><font color="#FFFFFF">LinkedIn</font></a> |
       <a href="https://github.com/ZIADEA" target="_blank"><font color="#FFFFFF">GitHub</font></a></font>
@@ -49,542 +76,636 @@ function showGroup(name) {
     <td width="170" valign="top" bgcolor="#E8EEF4" style="border-right: 1px solid #999999; padding: 10px;">
       <b>Menu</b>
       <div class="menu">
-        <a href="#about">About</a>
-        <a href="#updates">Updates</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
+        <a href="#about"><span class="en">About</span><span class="fr">À propos</span></a>
+        <a href="#updates"><span class="en">Updates</span><span class="fr">Actualités</span></a>
+        <a href="#education"><span class="en">Education</span><span class="fr">Formation</span></a>
+        <a href="#experience"><span class="en">Experience</span><span class="fr">Expérience</span></a>
+        <a href="#projects"><span class="en">Projects</span><span class="fr">Projets</span></a>
+        <a href="#skills"><span class="en">Skills</span><span class="fr">Compétences</span></a>
+        <a href="#certifications"><span class="en">Certifications</span><span class="fr">Certifications</span></a>
       </div>
     </td>
     <td valign="top" style="padding: 5px 15px 15px 15px;">
 
 <a name="about"></a>
-<h2>About</h2>
-<p>I am an engineering student at École Centrale de Lyon, following a double degree with a Master in Mechanics (Fluid Mechanics and Energetics), after the engineering cycle in Industrial Engineering, AI and Data Technologies at ENSAM Meknès.</p>
-<p>My interests cover turbomachinery, energetics and thermal engineering, numerical simulation of flows, aerodynamics and aeroacoustics, combined with machine learning and data tools for industrial environments. I enjoy turning complex technical ideas into clear tools, demos and teaching material.</p>
-<p>I am looking for a 6-month end-of-studies internship starting in April 2027, ideally in research and development. Based in Lyon, mobile across metropolitan France.</p>
+<h2><span class="en">About</span><span class="fr">À propos</span></h2>
+<p class="en">I am an engineering student at École Centrale de Lyon, following a double degree with a Master in Mechanics (Fluid Mechanics and Energetics), after the engineering cycle in Industrial Engineering, AI and Data Technologies at ENSAM Meknès.</p><p class="fr">Je suis élève ingénieure à l'École Centrale de Lyon, en double cursus avec un Master de Mécanique (Mécanique des Fluides et Énergétique), après un cycle ingénieur en Génie industriel, option IA et Technologies des Données, à l'ENSAM Meknès.</p>
+<p class="en">My interests cover turbomachinery, energetics and thermal engineering, numerical simulation of flows, aerodynamics and aeroacoustics, combined with machine learning and data tools for industrial environments. I enjoy turning complex technical ideas into clear tools, demos and teaching material.</p><p class="fr">Mes centres d'intérêt couvrent les turbomachines, l'énergétique et la thermique, la simulation numérique des écoulements, l'aérodynamique et l'aéroacoustique, associés à l'apprentissage automatique et aux outils de données pour les environnements industriels. J'aime transformer des idées techniques complexes en outils, démonstrations et supports pédagogiques clairs.</p>
+<p class="en">I am looking for a 6-month end-of-studies internship starting in April 2027, ideally in research and development. Based in Lyon, mobile across metropolitan France.</p><p class="fr">Je recherche un stage de fin d'études de 6 mois à partir d'avril 2027, idéalement en recherche et développement. Basée à Lyon, mobile en France métropolitaine.</p>
 <p align="right"><font size="1"><a href="#top">[top]</a></font></p>
 
 <a name="updates"></a>
-<h2>Updates</h2>
+<h2><span class="en">Updates</span><span class="fr">Actualités</span></h2>
   <table width="100%" border="0" cellpadding="5" cellspacing="0">
     <tr>
-      <td valign="top" width="110"><font color="#666666">October 2026</font></td>
-      <td valign="top">Master design project on the numerical simulation of flows at École Centrale de Lyon: conservative schemes (Roe, Lax-Wendroff, Lax) applied to the traffic-flow equation, in Matlab.</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">October 2026</span><span class="fr">Octobre 2026</span></font></td>
+      <td valign="top"><span class="en">Master design project on the numerical simulation of flows at École Centrale de Lyon: conservative schemes (Roe, Lax-Wendroff, Lax) applied to the traffic-flow equation, in Matlab.</span><span class="fr">Bureau d'études de Master sur la simulation numérique des écoulements à l'École Centrale de Lyon : schémas conservatifs (Roe, Lax-Wendroff, Lax) appliqués à l'équation du trafic routier, sous Matlab.</span></td>
     </tr>
     <tr>
-      <td valign="top" width="110"><font color="#666666">2026</font></td>
-      <td valign="top">Volunteer at the Fête de la science, École Centrale de Lyon: guided visits of the supersonic and subsonic wind tunnels and helped with registrations.</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">2026</span><span class="fr">2026</span></font></td>
+      <td valign="top"><span class="en">Volunteer at the Fête de la science, École Centrale de Lyon: guided visits of the supersonic and subsonic wind tunnels and helped with registrations.</span><span class="fr">Bénévole à la Fête de la science de l'École Centrale de Lyon : accompagnement des visites des souffleries supersonique et subsonique et aide aux inscriptions.</span></td>
     </tr>
     <tr>
-      <td valign="top" width="110"><font color="#666666">2026</font></td>
-      <td valign="top">Certified in first aid (Brevet Premiers secours de la planète, Institut de l'Engagement and CNRS).</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">2026</span><span class="fr">2026</span></font></td>
+      <td valign="top"><span class="en">Certified in first aid (Brevet Premiers secours de la planète, Institut de l'Engagement and CNRS).</span><span class="fr">Brevet Premiers secours de la planète obtenu (Institut de l'Engagement et CNRS).</span></td>
     </tr>
     <tr>
-      <td valign="top" width="110"><font color="#666666">April 2026</font></td>
-      <td valign="top">Two vibration-analysis labs at ENSAM Meknès: unbalance identification and diagnosis of a rolling bearing.</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">April 2026</span><span class="fr">Avril 2026</span></font></td>
+      <td valign="top"><span class="en">Two vibration-analysis labs at ENSAM Meknès: unbalance identification and diagnosis of a rolling bearing.</span><span class="fr">Deux TP d'analyse vibratoire à l'ENSAM Meknès : identification d'un balourd et diagnostic d'un roulement.</span></td>
     </tr>
   </table>
 <p align="right"><font size="1"><a href="#top">[top]</a></font></p>
 
 <a name="education"></a>
-<h2>Education</h2>
+<h2><span class="en">Education</span><span class="fr">Formation</span></h2>
   <table width="100%" border="0" cellpadding="5" cellspacing="0">
     <tr>
-      <td valign="top" width="110"><font color="#666666">2026-2027</font></td>
-      <td valign="top"><b>Double degree, École Centrale de Lyon</b>, Écully, France<br>Master in Mechanics (M2), Fluid Mechanics and Energetics track, co-accredited by Université Lyon 1 and Mines Saint-Étienne.<br>Courses: numerical simulation of flows, turbulence, flow stability, aerodynamics and energetics of turbomachinery, aeroacoustics, nuclear energy, mixing and chaos.<br>Higher-education diploma: Eco-design and Innovation Engineer, Transport, Mobility and Decarbonisation option.</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">2026-2027</span><span class="fr">2026-2027</span></font></td>
+      <td valign="top"><span class="en"><b>Double degree, École Centrale de Lyon</b>, Écully, France<br>Master in Mechanics (M2), Fluid Mechanics and Energetics track, co-accredited by Université Lyon 1 and Mines Saint-Étienne.<br>Courses: numerical simulation of flows, turbulence, flow stability, aerodynamics and energetics of turbomachinery, aeroacoustics, nuclear energy, mixing and chaos.<br>Higher-education diploma: Eco-design and Innovation Engineer, Transport, Mobility and Decarbonisation option.</span><span class="fr"><b>Double cursus, École Centrale de Lyon</b>, Écully, France<br>Master Mécanique (M2), parcours Mécanique des Fluides et Énergétique, co-accrédité Université Lyon 1 et Mines Saint-Étienne.<br>Cours : simulation numérique des écoulements, turbulence, stabilité des écoulements, aérodynamique et énergétique des turbomachines, aéroacoustique, énergie nucléaire, mélange et chaos.<br>Diplôme d'études supérieures : Métier Ingénieur Éco-Conception et Innovation, option Transport Mobilité et Décarbonation.</span></td>
     </tr>
     <tr>
-      <td valign="top" width="110"><font color="#666666">2024-2027</font></td>
-      <td valign="top"><b>Engineering cycle, Industrial Engineering, AI and Data Technologies option</b><br>École nationale supérieure d'arts et métiers (ENSAM), Meknès, Morocco<br>Courses: fluid mechanics and thermal machines, heat transfer and turbomachinery, machine learning and reinforcement learning, time series, Lean Six Sigma.</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">2024-2027</span><span class="fr">2024-2027</span></font></td>
+      <td valign="top"><span class="en"><b>Engineering cycle, Industrial Engineering, AI and Data Technologies option</b><br>École nationale supérieure d'arts et métiers (ENSAM), Meknès, Morocco<br>Courses: fluid mechanics and thermal machines, heat transfer and turbomachinery, machine learning and reinforcement learning, time series, Lean Six Sigma.</span><span class="fr"><b>Cycle ingénieur Génie industriel, option IA et Technologies des Données</b><br>École nationale supérieure d'arts et métiers (ENSAM), Meknès, Maroc<br>Cours : mécanique des fluides et machines thermiques, transferts thermiques et turbomachines, apprentissage automatique et par renforcement, séries chronologiques, Lean Six Sigma.</span></td>
     </tr>
     <tr>
-      <td valign="top" width="110"><font color="#666666">2022-2024</font></td>
-      <td valign="top"><b>DEUST MIP: Mathematics, Computer Science, Physics</b>, with honours (mention Bien)<br>Faculty of Sciences and Techniques, Sultan Moulay Slimane University, Béni Mellal, Morocco</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">2022-2024</span><span class="fr">2022-2024</span></font></td>
+      <td valign="top"><span class="en"><b>DEUST MIP: Mathematics, Computer Science, Physics</b>, with honours (mention Bien)<br>Faculty of Sciences and Techniques, Sultan Moulay Slimane University, Béni Mellal, Morocco</span><span class="fr"><b>DEUST MIP : Mathématiques, Informatique, Physique</b>, mention Bien<br>Faculté des Sciences et Techniques, Université Sultan Moulay Slimane, Béni Mellal, Maroc</span></td>
     </tr>
     <tr>
-      <td valign="top" width="110"><font color="#666666">2021-2022</font></td>
-      <td valign="top"><b>Baccalauréat, série D</b>, with high honours (mention Très Bien)<br>Lycée Anne &amp; Albert, Togo</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">2021-2022</span><span class="fr">2021-2022</span></font></td>
+      <td valign="top"><span class="en"><b>Baccalauréat, série D</b>, with high honours (mention Très Bien)<br>Lycée Anne &amp; Albert, Togo</span><span class="fr"><b>Baccalauréat série D</b>, mention Très Bien<br>Lycée Anne &amp; Albert, Togo</span></td>
     </tr>
   </table>
 <p align="right"><font size="1"><a href="#top">[top]</a></font></p>
 
 <a name="experience"></a>
-<h2>Professional experience</h2>
+<h2><span class="en">Professional experience</span><span class="fr">Expérience professionnelle</span></h2>
   <table width="100%" border="0" cellpadding="5" cellspacing="0">
     <tr>
-      <td valign="top" width="110"><font color="#666666">2025<br><font size="1">2 months</font></font></td>
-      <td valign="top"><b>Data Analyst Intern (Business Intelligence)</b>, Technocolabs Softwares, IT company (remote, India)<br>Processed and analysed data; built Power BI dashboards to support decision-making.</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">2025</span><span class="fr">2025</span><br><font size="1"><span class="en">2 months</span><span class="fr">2 mois</span></font></font></td>
+      <td valign="top"><span class="en"><b>Data Analyst Intern (Business Intelligence)</b>, Technocolabs Softwares, IT company (remote, India)<br>Processed and analysed data; built Power BI dashboards to support decision-making.</span><span class="fr"><b>Stage d'analyste de données (Business Intelligence)</b>, Technocolabs Softwares, entreprise informatique (à distance, Inde)<br>Traitement et analyse de données ; réalisation de tableaux de bord Power BI d'aide à la décision.</span></td>
     </tr>
     <tr>
-      <td valign="top" width="110"><font color="#666666">2025<br><font size="1">1 month</font></font></td>
-      <td valign="top"><b>Engineering Intern, Digitalisation &amp; Data Science</b>, Airport and Port Security Authority of Lomé, Togo<br>Analysed the need, then designed a web application (phpMyAdmin) for the traceability of regulated items, replacing manual registers.</td>
+      <td valign="top" width="110"><font color="#666666"><span class="en">2025</span><span class="fr">2025</span><br><font size="1"><span class="en">1 month</span><span class="fr">1 mois</span></font></font></td>
+      <td valign="top"><span class="en"><b>Engineering Intern, Digitalisation &amp; Data Science</b>, Airport and Port Security Authority of Lomé, Togo<br>Analysed the need, then designed a web application (phpMyAdmin) for the traceability of regulated items, replacing manual registers.</span><span class="fr"><b>Stage ingénieur, Digitalisation &amp; Data Science</b>, Autorité de Sûreté de l'Aéroport de Lomé et du Port Autonome, Togo<br>Analyse du besoin, puis conception d'une application web (phpMyAdmin) de traçabilité des articles réglementés, en remplacement des registres manuels.</span></td>
     </tr>
   </table>
 <p align="right"><font size="1"><a href="#top">[top]</a></font></p>
 
 <a name="projects"></a>
-<h2>Projects</h2>
-<p>Selected academic, internship and personal projects, from rotating-machinery diagnosis and numerical methods to machine learning and software tools.</p>
-<p>Show: [ <a href="javascript:showGroup('all')">All</a> | <a href="javascript:showGroup('mech')">Mechanics &amp; numerics</a> | <a href="javascript:showGroup('ai')">AI &amp; data</a> | <a href="javascript:showGroup('sw')">Software &amp; applied AI</a> | <a href="javascript:showGroup('misc')">Fundamentals</a> ]</p>
+<h2><span class="en">Projects</span><span class="fr">Projets</span></h2>
+<p class="en">Selected academic, internship and personal projects, from rotating-machinery diagnosis and numerical methods to machine learning and software tools.</p><p class="fr">Sélection de projets académiques, de stage et personnels, du diagnostic de machines tournantes et des méthodes numériques à l'apprentissage automatique et aux outils logiciels.</p>
+<p><span class="en">Show:</span><span class="fr">Afficher :</span> [ <a href="javascript:showGroup('all')"><span class="en">All</span><span class="fr">Tout</span></a> | <a href="javascript:showGroup('mech')"><span class="en">Mechanics &amp; numerics</span><span class="fr">Mécanique et calcul</span></a> | <a href="javascript:showGroup('ai')"><span class="en">AI &amp; data</span><span class="fr">IA et données</span></a> | <a href="javascript:showGroup('sw')"><span class="en">Software &amp; applied AI</span><span class="fr">Logiciel et IA appliquée</span></a> | <a href="javascript:showGroup('misc')"><span class="en">Fundamentals</span><span class="fr">Bases</span></a> ]</p>
 
 <div id="grp_mech">
-<h3>Mechanics, vibrations &amp; numerical methods</h3>
+<h3><span class="en">Mechanics, vibrations &amp; numerical methods</span><span class="fr">Mécanique, vibrations et méthodes numériques</span></h3>
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Numerical Simulation of Flows (Master design project)</b></td>
+      <td valign="top"><b><span class="en">Numerical Simulation of Flows (Master design project)</span><span class="fr">Simulation numérique des écoulements : bureau d'études de Master</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">10/2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>École Centrale de Lyon, Master in Mechanics</i><br>
-    Finite-difference resolution of the traffic-flow equation (a non-linear conservation law) with conservative schemes.
-    <ul>
+      <td colspan="2"><i><span class="en">École Centrale de Lyon, Master in Mechanics</span><span class="fr">École Centrale de Lyon, Master Mécanique</span></i><br>
+    <span class="en">Finite-difference resolution of the traffic-flow equation (a non-linear conservation law) with conservative schemes.</span><span class="fr">Résolution par différences finies de l'équation du trafic routier (loi de conservation non linéaire) avec des schémas conservatifs.</span>
+    <ul class="en">
       <li>Roe, Lax-Wendroff and Lax schemes implemented in Matlab and compared with the exact solution (method of characteristics) on rarefaction, compression, shock and queue-of-vehicles cases.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Matlab, CFD, Conservative schemes, Roe, Lax-Wendroff</font></td>
+    <ul class="fr">
+      <li>Schémas de Roe, Lax-Wendroff et Lax implémentés sous Matlab et comparés à la solution exacte (méthode des caractéristiques) sur des cas de détente, de compression, de choc et de file de véhicules.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Matlab, CFD, Conservative schemes, Roe, Lax-Wendroff</span><span class="fr">Mots-clés : Matlab, Simulation numérique, Schémas conservatifs, Roe, Lax-Wendroff</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Mechanical Seal Test Bench: Transmission Design</b></td>
+      <td valign="top"><b><span class="en">Mechanical Seal Test Bench: Transmission Design</span><span class="fr">Banc d'essai de garnitures mécaniques : dimensionnement d'une transmission</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">11/2024</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, machine elements &amp; architecture, team of 3</i><br>
-    Sizing of the transmission of a test bench for mechanical seals (rotating-shaft sealing elements found in pumps), with a sectional assembly drawing.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, machine elements &amp; architecture, team of 3</span><span class="fr">ENSAM Meknès, éléments et architectures des machines, groupe de 3</span></i><br>
+    <span class="en">Sizing of the transmission of a test bench for mechanical seals (rotating-shaft sealing elements found in pumps), with a sectional assembly drawing.</span><span class="fr">Dimensionnement de la transmission d'un banc d'essai de garnitures mécaniques (organes d'étanchéité d'arbre tournant, présents notamment dans les pompes), avec dessin d'ensemble en coupe.</span>
+    <ul class="en">
       <li>Force balance (statics, torsors) and sizing of <b>keys</b>, <b>motor</b> (3.3 kW) and <b>rolling bearings</b> according to their rated life L<sub>10h</sub>.</li>
       <li>26-page report and hand-drawn assembly drawing; analytical calculations based on manufacturer catalogues.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Solid mechanics, Rotating machinery, Bearings, Sizing</font></td>
+    <ul class="fr">
+      <li>Bilan des efforts (statique, torseurs) et dimensionnement des <b>clavettes</b>, du <b>moteur</b> (3,3 kW) et des <b>roulements</b> selon leur durée de vie L<sub>10h</sub>.</li>
+      <li>Rapport de 26 pages et dessin d'ensemble fait à la main ; calculs analytiques à partir de catalogues constructeur.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Solid mechanics, Rotating machinery, Bearings, Sizing</span><span class="fr">Mots-clés : Mécanique des solides, Machines tournantes, Roulements, Dimensionnement</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Vibration Lab 1: Unbalance Identification</b></td>
+      <td valign="top"><b><span class="en">Vibration Lab 1: Unbalance Identification</span><span class="fr">TP de vibratoire 1 : identification d'un balourd</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">04/2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, predictive maintenance by AI module, team of 5</i><br>
-    Identification of an unbalance on a power-transmission test bench using a stroboscope and spectral analysis.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, predictive maintenance by AI module, team of 5</span><span class="fr">ENSAM Meknès, module Maintenance par IA, groupe de 5</span></i><br>
+    <span class="en">Identification of an unbalance on a power-transmission test bench using a stroboscope and spectral analysis.</span><span class="fr">Identification d'un balourd sur un banc de transmission de puissance par stroboscope et analyse spectrale.</span>
+    <ul class="en">
       <li>Measurement of the rotation frequency (24.88 Hz for 25 Hz theoretical) and vibration levels on 3 axes; <b>spectral peak at the rotation frequency</b>, characteristic of unbalance.</li>
       <li>Severity assessed according to <b>ISO 10816</b>: 6.15 mm/s in the radial direction, above the alarm threshold.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Vibrations, Unbalance, FFT, ISO 10816</font></td>
+    <ul class="fr">
+      <li>Mesure de la fréquence de rotation (24,88 Hz pour 25 Hz théorique) et des niveaux de vibration sur 3 axes ; <b>pic spectral à la fréquence de rotation</b>, caractéristique d'un balourd.</li>
+      <li>Sévérité évaluée selon la norme <b>ISO 10816</b> : 6,15 mm/s en radial, au-dessus du seuil d'alarme.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Vibrations, Unbalance, FFT, ISO 10816</span><span class="fr">Mots-clés : Vibrations, Balourd, FFT, ISO 10816</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Vibration Lab 2: SKF 6206 Bearing Diagnosis</b></td>
+      <td valign="top"><b><span class="en">Vibration Lab 2: SKF 6206 Bearing Diagnosis</span><span class="fr">TP de vibratoire 2 : diagnostic d'un roulement SKF 6206</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">04/2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, predictive maintenance by AI module, team of 5</i><br>
-    Diagnosis of a rolling bearing from FFT spectra and defect frequencies, then effect of a two-plane unbalance.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, predictive maintenance by AI module, team of 5</span><span class="fr">ENSAM Meknès, module Maintenance par IA, groupe de 5</span></i><br>
+    <span class="en">Diagnosis of a rolling bearing from FFT spectra and defect frequencies, then effect of a two-plane unbalance.</span><span class="fr">Diagnostic d'un roulement à partir des spectres FFT et des fréquences de défaut, puis effet d'un balourd sur deux plans.</span>
+    <ul class="en">
       <li>Computed the bearing <b>defect frequencies</b> (outer race 71.4 Hz, ball 92.4 Hz, inner race 108.6 Hz) and compared them with the spectra measured at 6 points; defect <b>confirmed after disassembly</b> (wear and corrosion).</li>
       <li>With added unbalance, RMS velocity increased by 17 to 88&nbsp;% depending on the measuring point, with a peak at the rotation frequency and its harmonics.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Vibrations, Bearings, Diagnosis, FFT</font></td>
+    <ul class="fr">
+      <li>Calcul des <b>fréquences de défaut</b> du roulement (bague externe 71,4 Hz, bille 92,4 Hz, bague interne 108,6 Hz) et comparaison avec les spectres mesurés en 6 points ; défaut <b>confirmé au démontage</b> (usure et corrosion).</li>
+      <li>Avec le balourd ajouté, la vitesse RMS augmente de 17 à 88&nbsp;% selon le point de mesure, avec un pic à la fréquence de rotation et ses harmoniques.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Vibrations, Bearings, Diagnosis, FFT</span><span class="fr">Mots-clés : Vibrations, Roulements, Diagnostic, FFT</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Statistical Process Control Lab</b></td>
+      <td valign="top"><b><span class="en">Statistical Process Control Lab</span><span class="fr">TP de maîtrise statistique des procédés</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">03/2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, pair work</i><br>
-    X̄-R and p control charts and capability analysis with SPSS.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, pair work</span><span class="fr">ENSAM Meknès, binôme</span></i><br>
+    <span class="en">X̄-R and p control charts and capability analysis with SPSS.</span><span class="fr">Cartes de contrôle X̄-R et carte p, analyse de capabilité avec SPSS.</span>
+    <ul class="en">
       <li>Control charts and capability indices (Cp, Cpk); mean range R̄ reduced by 39&nbsp;% after improvement (15.88 g to 9.62 g).</li>
       <li>Manual calculations systematically cross-checked against SPSS output.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Quality, SPC, Statistics, SPSS</font></td>
+    <ul class="fr">
+      <li>Cartes de contrôle et indices de capabilité (Cp, Cpk) ; étendue moyenne R̄ réduite de 39&nbsp;% après amélioration (15,88 g à 9,62 g).</li>
+      <li>Calculs manuels systématiquement recoupés avec les sorties de SPSS.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Quality, SPC, Statistics, SPSS</span><span class="fr">Mots-clés : Qualité, MSP, Statistiques, SPSS</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Numerical Analysis in Matlab (Labs 1-4)</b></td>
+      <td valign="top"><b><span class="en">Numerical Analysis in Matlab (Labs 1-4)</span><span class="fr">Analyse numérique sous Matlab (TP1 à TP4)</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2022-2024</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Faculty of Sciences and Techniques, Béni Mellal, DEUST MIP</i><br>
-    Matlab library of interpolation, numerical integration and root-finding, validated against exact solutions.
-    <ul>
+      <td colspan="2"><i><span class="en">Faculty of Sciences and Techniques, Béni Mellal, DEUST MIP</span><span class="fr">Faculté des Sciences et Techniques de Béni Mellal, DEUST MIP</span></i><br>
+    <span class="en">Matlab library of interpolation, numerical integration and root-finding, validated against exact solutions.</span><span class="fr">Bibliothèque Matlab d'interpolation, d'intégration numérique et de recherche de racines, validée par comparaison avec des solutions exactes.</span>
+    <ul class="en">
       <li><b>Composite Simpson</b>: error 1.6×10<sup>-8</sup> (n = 10) versus 4.2×10<sup>-2</sup> for composite rectangles on ∫<sub>0</sub><sup>1</sup> sin x dx.</li>
       <li>Roots of e<sup>x</sup> − 1 + x = 0: <b>Newton</b> in 3 iterations, secant in 4, bisection in 11; 45-page report.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Matlab, Numerical analysis, Integration, Interpolation</font></td>
+    <ul class="fr">
+      <li><b>Simpson composite</b> : erreur 1,6×10<sup>-8</sup> (n = 10) contre 4,2×10<sup>-2</sup> pour les rectangles composites sur ∫<sub>0</sub><sup>1</sup> sin x dx.</li>
+      <li>Racines de e<sup>x</sup> − 1 + x = 0 : <b>Newton</b> en 3 itérations, sécante en 4, dichotomie en 11 ; compte rendu de 45 pages.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Matlab, Numerical analysis, Integration, Interpolation</span><span class="fr">Mots-clés : Matlab, Analyse numérique, Intégration, Interpolation</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
 </div>
 
 <div id="grp_ai">
-<h3>AI, predictive maintenance &amp; data science</h3>
+<h3><span class="en">AI, predictive maintenance &amp; data science</span><span class="fr">IA, maintenance prédictive et science des données</span></h3>
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>AI Maintenance: Predictive Maintenance Web Platform</b></td>
+      <td valign="top"><b><span class="en">AI Maintenance: Predictive Maintenance Web Platform</span><span class="fr">AI Maintenance : plateforme web de maintenance prédictive</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">&nbsp;</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Personal project</i><br>
-    Web application for predictive maintenance: vibration analysis, dashboards and model training tracked with MLflow.
-    <ul>
+      <td colspan="2"><i><span class="en">Personal project</span><span class="fr">Projet personnel</span></i><br>
+    <span class="en">Web application for predictive maintenance: vibration analysis, dashboards and model training tracked with MLflow.</span><span class="fr">Application web de maintenance prédictive : analyse vibratoire, tableaux de bord et entraînement de modèles suivis avec MLflow.</span>
+    <ul class="en">
       <li>Vibration diagnosis rules (<b>RMS</b>, crest factor, kurtosis, FFT, bearing frequencies BPFO/BPFI) and PDF reports.</li>
       <li>Learning pipeline (Random Forest, XGBoost, LightGBM, CatBoost) tracked with <b>MLflow</b>; FastAPI backend, React interface, SQLite database.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Predictive maintenance, Vibrations, FastAPI, MLflow, React</font></td>
+    <ul class="fr">
+      <li>Règles de diagnostic vibratoire (<b>RMS</b>, facteur de crête, kurtosis, FFT, fréquences de roulement BPFO/BPFI) et rapports PDF.</li>
+      <li>Pipeline d'apprentissage (Random Forest, XGBoost, LightGBM, CatBoost) suivi avec <b>MLflow</b> ; API FastAPI, interface React, base SQLite.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Predictive maintenance, Vibrations, FastAPI, MLflow, React</span><span class="fr">Mots-clés : Maintenance prédictive, Vibrations, FastAPI, MLflow, React</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Anomaly Detection with Java and WEKA</b></td>
+      <td valign="top"><b><span class="en">Anomaly Detection with Java and WEKA</span><span class="fr">Détection d'anomalies avec Java et WEKA</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">05/2025</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, java expert module</i><br>
-    Java application detecting anomalies with KMeans on bearing sensor data.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, java expert module</span><span class="fr">ENSAM Meknès, module Java expert</span></i><br>
+    <span class="en">Java application detecting anomalies with KMeans on bearing sensor data.</span><span class="fr">Application Java de détection d'anomalies par KMeans sur des données de capteurs de roulements.</span>
+    <ul class="en">
       <li>Normalisation, <b>KMeans</b> with the number of clusters chosen by silhouette score, PCA projection; 156 of 2,156 records isolated (7.2&nbsp;%).</li>
       <li>Swing interface, serialised model, automatic PDF report and executable JAR; 8-page report.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Anomaly detection, Clustering, Java, WEKA</font></td>
+    <ul class="fr">
+      <li>Normalisation, <b>KMeans</b> avec choix du nombre de clusters par score de silhouette, projection ACP ; 156 enregistrements isolés sur 2&nbsp;156 (7,2&nbsp;%).</li>
+      <li>Interface Swing, modèle sérialisé, rapport PDF automatique et JAR exécutable ; rapport de 8 pages.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Anomaly detection, Clustering, Java, WEKA</span><span class="fr">Mots-clés : Détection d'anomalies, Clustering, Java, WEKA</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Reinforcement Learning Labs</b></td>
+      <td valign="top"><b><span class="en">Reinforcement Learning Labs</span><span class="fr">Labs d'apprentissage par renforcement</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">11/2025</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, 5 lab sessions</i><br>
-    Dynamic programming, Q-Learning, DQN and PPO on grid environments and classic control tasks.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, 5 lab sessions</span><span class="fr">ENSAM Meknès, 5 séances</span></i><br>
+    <span class="en">Dynamic programming, Q-Learning, DQN and PPO on grid environments and classic control tasks.</span><span class="fr">Programmation dynamique, Q-Learning, DQN et PPO sur des environnements en grille et des tâches de contrôle classiques.</span>
+    <ul class="en">
       <li>Value/Policy Iteration, <b>Q-Learning</b>, DQN (PyTorch) and <b>PPO</b> (Stable-Baselines3); sensitivity study over the discount factor (11 values × 5 seeds) reaching the theoretical optimum (≈ +32) on a 10×10 grid.</li>
       <li>PPO reaches the maximum CartPole score (500) within 30,000 steps; failure on the moving-goal task traced to an incomplete observation.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Reinforcement learning, Deep RL, PyTorch, Stable-Baselines3</font></td>
+    <ul class="fr">
+      <li>Value/Policy Iteration, <b>Q-Learning</b>, DQN (PyTorch) et <b>PPO</b> (Stable-Baselines3) ; étude de sensibilité au facteur d'actualisation (11 valeurs × 5 graines) atteignant l'optimum théorique (≈ +32) sur une grille 10×10.</li>
+      <li>PPO atteint le score maximal de CartPole (500) en 30&nbsp;000 pas ; échec sur la tâche à but mobile, attribué à une observation incomplète.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Reinforcement learning, Deep RL, PyTorch, Stable-Baselines3</span><span class="fr">Mots-clés : Apprentissage par renforcement, Deep RL, PyTorch, Stable-Baselines3</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>M5 Sales Forecasting</b></td>
+      <td valign="top"><b><span class="en">M5 Sales Forecasting</span><span class="fr">Prévision des ventes M5</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2025</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Google Colab notebook</i><br>
-    Time-series study on 59 million rows: stationarity, ARIMA and recurrent networks.
-    <ul>
+      <td colspan="2"><i><span class="en">Google Colab notebook</span><span class="fr">Notebook Google Colab</span></i><br>
+    <span class="en">Time-series study on 59 million rows: stationarity, ARIMA and recurrent networks.</span><span class="fr">Étude de série temporelle sur 59 millions de lignes : stationnarité, ARIMA et réseaux récurrents.</span>
+    <ul class="en">
       <li>ADF, Phillips-Perron and KPSS tests, differencing, ACF/PACF and <b>ARIMA(4,1,5)</b>.</li>
       <li>RNN/LSTM/GRU models on the aggregated 1,941-day series.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Time series, ARIMA, LSTM, Python</font></td>
+    <ul class="fr">
+      <li>Tests ADF, Phillips-Perron et KPSS, différenciation, ACF/PACF et <b>ARIMA(4,1,5)</b>.</li>
+      <li>Modèles RNN/LSTM/GRU sur la série agrégée de 1&nbsp;941 jours.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Time series, ARIMA, LSTM, Python</span><span class="fr">Mots-clés : Séries temporelles, ARIMA, LSTM, Python</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Sleep Health and Lifestyle</b></td>
+      <td valign="top"><b><span class="en">Sleep Health and Lifestyle</span><span class="fr">Santé du sommeil et mode de vie</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2025</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Google Colab notebook</i><br>
-    Regression, KNN, KMeans and DBSCAN on 400 profiles.
-    <ul>
+      <td colspan="2"><i><span class="en">Google Colab notebook</span><span class="fr">Notebook Google Colab</span></i><br>
+    <span class="en">Regression, KNN, KMeans and DBSCAN on 400 profiles.</span><span class="fr">Régression, KNN, KMeans et DBSCAN sur 400 profils.</span>
+    <ul class="en">
       <li>Five regression models (negative result: R² ≈ 0, no usable correlation), <b>KNN</b> classification at 94&nbsp;% (equal to the majority-class share), clustering with silhouette and PCA.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Machine learning, scikit-learn, Clustering</font></td>
+    <ul class="fr">
+      <li>Cinq modèles de régression (résultat négatif : R² ≈ 0, aucune corrélation exploitable), classification <b>KNN</b> à 94&nbsp;% (égale à la part de la classe majoritaire), clustering avec silhouette et ACP.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Machine learning, scikit-learn, Clustering</span><span class="fr">Mots-clés : Machine learning, scikit-learn, Clustering</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Machine Learning Notebooks (MY-AI-REPERT)</b></td>
+      <td valign="top"><b><span class="en">Machine Learning Notebooks (MY-AI-REPERT)</span><span class="fr">Notebooks d'apprentissage automatique (MY-AI-REPERT)</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2024-2025</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Four Jupyter notebooks</i><br>
-    Regression, hand-coded logistic regression, trees, neural networks and PCA.
-    <ul>
+      <td colspan="2"><i><span class="en">Four Jupyter notebooks</span><span class="fr">Quatre notebooks Jupyter</span></i><br>
+    <span class="en">Regression, hand-coded logistic regression, trees, neural networks and PCA.</span><span class="fr">Régression, régression logistique codée à la main, arbres, réseaux de neurones et ACP.</span>
+    <ul class="en">
       <li><b>Gradient descent</b> and logistic regression coded with NumPy and compared to scikit-learn (identical R² = 0.6393 on a surface/price dataset).</li>
       <li>Non-linear boundaries through polynomial features: rings from 53.2 to 99.3&nbsp;%, moons at 98&nbsp;% on test data.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Machine learning, NumPy, scikit-learn, TensorFlow</font></td>
+    <ul class="fr">
+      <li><b>Descente de gradient</b> et régression logistique codées avec NumPy et comparées à scikit-learn (R² = 0,6393 identique sur un jeu surface/prix).</li>
+      <li>Frontières non linéaires par caractéristiques polynomiales : anneaux de 53,2 à 99,3&nbsp;%, lunes à 98&nbsp;% sur les données de test.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Machine learning, NumPy, scikit-learn, TensorFlow</span><span class="fr">Mots-clés : Machine learning, NumPy, scikit-learn, TensorFlow</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Dimensionality Reduction with PCA</b></td>
+      <td valign="top"><b><span class="en">Dimensionality Reduction with PCA</span><span class="fr">Réduction de dimension par ACP</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">&nbsp;</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Notebook on loan data</i><br>
-    PCA coded with NumPy on lending data and compared with scikit-learn.
-    <ul>
+      <td colspan="2"><i><span class="en">Notebook on loan data</span><span class="fr">Notebook sur des données de prêts</span></i><br>
+    <span class="en">PCA coded with NumPy on lending data and compared with scikit-learn.</span><span class="fr">ACP codée avec NumPy sur des données de prêts et comparée à scikit-learn.</span>
+    <ul class="en">
       <li>Standardisation, <b>covariance matrix</b>, eigenvalues and eigenvectors, projection; 29 components for 95&nbsp;% of cumulative variance.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: PCA, Linear algebra, NumPy</font></td>
+    <ul class="fr">
+      <li>Standardisation, <b>matrice de covariance</b>, valeurs et vecteurs propres, projection ; 29 composantes pour 95&nbsp;% de variance cumulée.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: PCA, Linear algebra, NumPy</span><span class="fr">Mots-clés : ACP, Algèbre linéaire, NumPy</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Employee Attrition Analysis</b></td>
+      <td valign="top"><b><span class="en">Employee Attrition Analysis</span><span class="fr">Analyse de l'attrition du personnel</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">06/2025</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Technocolabs internship, 18-page report</i><br>
-    Statistical analysis and comparison of 5 classification models on 1,470 employees.
-    <ul>
+      <td colspan="2"><i><span class="en">Technocolabs internship, 18-page report</span><span class="fr">Stage Technocolabs, rapport de 18 pages</span></i><br>
+    <span class="en">Statistical analysis and comparison of 5 classification models on 1,470 employees.</span><span class="fr">Analyse statistique et comparaison de 5 modèles de classification sur 1&amp;nbsp;470 employés.</span>
+    <ul class="en">
       <li>Statistical tests (Cramér's V, chi-squared, ANOVA), selection of 15 and 32 variables, grid-search optimisation and 5-fold cross-validation.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Data analysis, scikit-learn, XGBoost, Statistics</font></td>
+    <ul class="fr">
+      <li>Tests statistiques (V de Cramér, khi-deux, ANOVA), sélection de 15 et 32 variables, optimisation par recherche sur grille et validation croisée à 5 plis.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Data analysis, scikit-learn, XGBoost, Statistics</span><span class="fr">Mots-clés : Analyse de données, scikit-learn, XGBoost, Statistiques</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>SmartWebScraper-CV</b></td>
+      <td valign="top"><b><span class="en">SmartWebScraper-CV</span><span class="fr">SmartWebScraper-CV</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">06/2025</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, computer Vision module, 34-page report</i><br>
-    Flask application detecting regions of web pages (Faster R-CNN), with OCR and NLP.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, computer Vision module, 34-page report</span><span class="fr">ENSAM Meknès, module Computer Vision, rapport de 34 pages</span></i><br>
+    <span class="en">Flask application detecting regions of web pages (Faster R-CNN), with OCR and NLP.</span><span class="fr">Application Flask de détection de zones de pages web (Faster R-CNN), avec OCR et NLP.</span>
+    <ul class="en">
       <li>Dataset of about 2,700 collected screenshots, about 200 annotated (COCO format, 18 classes); <b>Faster R-CNN</b> with Detectron2.</li>
       <li>Retraining loop with human validation; PaddleOCR, TF-IDF, spaCy and language-model pipeline.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Computer vision, Detectron2, OCR, NLP</font></td>
+    <ul class="fr">
+      <li>Jeu d'environ 2&nbsp;700 captures collectées, environ 200 annotées (format COCO, 18 classes) ; <b>Faster R-CNN</b> avec Detectron2.</li>
+      <li>Boucle de ré-entraînement avec validation humaine ; chaîne PaddleOCR, TF-IDF, spaCy et modèles de langage.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Computer vision, Detectron2, OCR, NLP</span><span class="fr">Mots-clés : Vision par ordinateur, Detectron2, OCR, NLP</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
 </div>
 
 <div id="grp_sw">
-<h3>Software engineering &amp; applied AI</h3>
+<h3><span class="en">Software engineering &amp; applied AI</span><span class="fr">Ingénierie logicielle et IA appliquée</span></h3>
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>CityPulse Logistics: Delivery Route Optimisation</b></td>
+      <td valign="top"><b><span class="en">CityPulse Logistics: Delivery Route Optimisation</span><span class="fr">CityPulse Logistics : optimisation de tournées de livraison</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2025-2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, team of 2</i><br>
-    Application for delivery route planning (vehicle routing with time windows), comparing 3 algorithms, with embedded AI.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, team of 2</span><span class="fr">ENSAM Meknès, binôme</span></i><br>
+    <span class="en">Application for delivery route planning (vehicle routing with time windows), comparing 3 algorithms, with embedded AI.</span><span class="fr">Application de planification de tournées de livraison (routage de véhicules avec fenêtres horaires), comparant 3 algorithmes, avec IA embarquée.</span>
+    <ul class="en">
       <li>Comparison of a greedy heuristic, <b>2-opt</b> and <b>Google OR-Tools</b>; OSRM road distances with Haversine fallback; driving-time constraints (EC 561/2006).</li>
       <li>Demand forecasting (ARIMA), anomaly detection (Isolation Forest), natural-language assistant; 24-table database, synchronised Django web portal, 193 tests.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Optimisation, VRP, OR-Tools, PyQt6, Django</font></td>
+    <ul class="fr">
+      <li>Comparaison d'un algorithme glouton, du <b>2-opt</b> et de <b>Google OR-Tools</b> ; distances routières OSRM avec repli sur Haversine ; contraintes de temps de conduite (CE 561/2006).</li>
+      <li>Prévision de la demande (ARIMA), détection d'anomalies (Isolation Forest), assistant en langage naturel ; base de 24 tables, portail web Django synchronisé, 193 tests.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Optimisation, VRP, OR-Tools, PyQt6, Django</span><span class="fr">Mots-clés : Optimisation, VRP, OR-Tools, PyQt6, Django</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>SoutenanceAI: AI-assisted Defence Grading</b></td>
+      <td valign="top"><b><span class="en">SoutenanceAI: AI-assisted Defence Grading</span><span class="fr">SoutenanceAI : notation de soutenances assistée par IA</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2025-2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, Digital Web Prototyping module, individual</i><br>
-    Django platform grading oral defences with AI: live transcription and criteria-based grading, backed by 270 automated tests.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, Digital Web Prototyping module, individual</span><span class="fr">ENSAM Meknès, module Digital Web Prototyping, projet individuel</span></i><br>
+    <span class="en">Django platform grading oral defences with AI: live transcription and criteria-based grading, backed by 270 automated tests.</span><span class="fr">Plateforme Django de notation de soutenances orales par IA : transcription en direct et notation par critères, appuyée par 270 tests automatisés.</span>
+    <ul class="en">
       <li>Whisper transcription, <b>WebSocket</b> broadcast, LLM grading with 49 jury styles; 5 languages including Arabic.</li>
       <li>Validation over 21 repeated calls: 8.25-point gap between the most extreme styles, standard deviation ≤ 1.00.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Django, LLM, WebSocket, Automated testing</font></td>
+    <ul class="fr">
+      <li>Transcription Whisper, diffusion par <b>WebSocket</b>, notation par LLM avec 49 styles de jury ; 5 langues dont l'arabe.</li>
+      <li>Validation sur 21 appels répétés : écart de 8,25 points entre les styles les plus extrêmes, écart-type ≤ 1,00.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Django, LLM, WebSocket, Automated testing</span><span class="fr">Mots-clés : Django, LLM, WebSocket, Tests automatisés</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>AITHINKDESIGN: AI-augmented Product Design</b></td>
+      <td valign="top"><b><span class="en">AITHINKDESIGN: AI-augmented Product Design</span><span class="fr">AITHINKDESIGN : conception de produit augmentée par l'IA</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2025-2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, trade projects, team of 2</i><br>
-    Workshop platform where AI agents assist design (Design Thinking, SCAMPER, TRIZ), from the need to the specification document.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, trade projects, team of 2</span><span class="fr">ENSAM Meknès, projets métiers, binôme</span></i><br>
+    <span class="en">Workshop platform where AI agents assist design (Design Thinking, SCAMPER, TRIZ), from the need to the specification document.</span><span class="fr">Plateforme d'ateliers où des agents d'IA assistent la conception (Design Thinking, SCAMPER, TRIZ), du besoin au cahier des charges.</span>
+    <ul class="en">
       <li>Workshops with 10 simultaneous users completed in 4 min 32 s (figure reported in the project report); validated by a design engineer on 3 real projects.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Product design, TRIZ, Next.js, FastAPI</font></td>
+    <ul class="fr">
+      <li>Ateliers de 10 utilisateurs simultanés réalisés en 4 min 32 s (chiffre issu du rapport du projet) ; validé par un ingénieur en conception sur 3 projets réels.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Product design, TRIZ, Next.js, FastAPI</span><span class="fr">Mots-clés : Conception de produit, TRIZ, Next.js, FastAPI</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>AI Prototyping Studio and FreeCAD Agent</b></td>
+      <td valign="top"><b><span class="en">AI Prototyping Studio and FreeCAD Agent</span><span class="fr">Studio de prototypage IA et agent FreeCAD</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">01/2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, technical report</i><br>
-    AI-assisted prototyping studio and a conversational agent driving FreeCAD through a Python bridge.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, technical report</span><span class="fr">ENSAM Meknès, rapport technique</span></i><br>
+    <span class="en">AI-assisted prototyping studio and a conversational agent driving FreeCAD through a Python bridge.</span><span class="fr">Studio de prototypage assisté par IA et agent conversationnel pilotant FreeCAD à travers un pont Python.</span>
+    <ul class="en">
       <li>34 CAD actions, 23 bridge routes and 6 export formats.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: CAD, FreeCAD, Generative AI, Python</font></td>
+    <ul class="fr">
+      <li>34 actions de CAO, 23 routes du pont et 6 formats d'export.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: CAD, FreeCAD, Generative AI, Python</span><span class="fr">Mots-clés : CAO, FreeCAD, IA générative, Python</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>EduForge: Educational Platform with RAG</b></td>
+      <td valign="top"><b><span class="en">EduForge: Educational Platform with RAG</span><span class="fr">EduForge : plateforme éducative avec RAG</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">&nbsp;</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Java / Spring Boot</i><br>
-    Educational platform generating quizzes through retrieval-augmented generation (pgvector, Gemini).
-    <ul>
+      <td colspan="2"><i><span class="en">Java / Spring Boot</span><span class="fr">Java / Spring Boot</span></i><br>
+    <span class="en">Educational platform generating quizzes through retrieval-augmented generation (pgvector, Gemini).</span><span class="fr">Plateforme éducative générant des quiz par génération augmentée de récupération (pgvector, Gemini).</span>
+    <ul class="en">
       <li>154 Java classes and 35 tables; RAG pipeline (900-character chunks, 768-dimension vectors, top 5 by cosine similarity) and adaptive difficulty.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Java, Spring Boot, RAG, pgvector</font></td>
+    <ul class="fr">
+      <li>154 classes Java et 35 tables ; pipeline RAG (morceaux de 900 caractères, vecteurs de 768 dimensions, top 5 par similarité cosinus) et difficulté adaptative.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Java, Spring Boot, RAG, pgvector</span><span class="fr">Mots-clés : Java, Spring Boot, RAG, pgvector</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>DJERIPERFUM: Perfume Shop and Recommendation Chatbot</b></td>
+      <td valign="top"><b><span class="en">DJERIPERFUM: Perfume Shop and Recommendation Chatbot</span><span class="fr">DJERIPERFUM : boutique de parfums et chatbot de recommandation</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">10-12/2025</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>AI module</i><br>
-    Streamlit shop (104 references) with a Botpress recommendation chatbot.
-    <ul>
+      <td colspan="2"><i><span class="en">AI module</span><span class="fr">Module IA</span></i><br>
+    <span class="en">Streamlit shop (104 references) with a Botpress recommendation chatbot.</span><span class="fr">Boutique Streamlit (104 références) avec un chatbot de recommandation Botpress.</span>
+    <ul class="en">
       <li>Recommendation by <b>weighted score</b>, 5 conversational flows, Instagram integration; 25-slide presentation.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Streamlit, Chatbot, Recommender system</font></td>
+    <ul class="fr">
+      <li>Recommandation par <b>score pondéré</b>, 5 parcours conversationnels, intégration Instagram ; présentation de 25 diapositives.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Streamlit, Chatbot, Recommender system</span><span class="fr">Mots-clés : Streamlit, Chatbot, Système de recommandation</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Tasty Recipe Master</b></td>
+      <td valign="top"><b><span class="en">Tasty Recipe Master</span><span class="fr">Tasty Recipe Master</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">&nbsp;</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Web project, team of 2</i><br>
-    Recipe website in PHP, MySQL (PDO) and Bootstrap, with search and validated forms.
-    <ul>
+      <td colspan="2"><i><span class="en">Web project, team of 2</span><span class="fr">Projet web, binôme</span></i><br>
+    <span class="en">Recipe website in PHP, MySQL (PDO) and Bootstrap, with search and validated forms.</span><span class="fr">Site de recettes en PHP, MySQL (PDO) et Bootstrap, avec recherche et formulaires validés.</span>
+    <ul class="en">
       <li>Relational database (recipes, users, messages, newsletter), 50 recipes from RecipeNLG, documented deployment.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: PHP, MySQL, Bootstrap</font></td>
+    <ul class="fr">
+      <li>Base relationnelle (recettes, utilisateurs, messages, newsletter), 50 recettes issues de RecipeNLG, déploiement documenté.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: PHP, MySQL, Bootstrap</span><span class="fr">Mots-clés : PHP, MySQL, Bootstrap</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>NEBULA STRIKE: 2D Space Shooter with Behavioural AI</b></td>
+      <td valign="top"><b><span class="en">NEBULA STRIKE: 2D Space Shooter with Behavioural AI</span><span class="fr">NEBULA STRIKE : jeu de tir spatial 2D et IA comportementale</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>ENSAM Meknès, games and behavioural AI lab</i><br>
-    2D shooter in Pygame featuring behavioural AI.
-    <ul>
+      <td colspan="2"><i><span class="en">ENSAM Meknès, games and behavioural AI lab</span><span class="fr">ENSAM Meknès, TP Jeux vidéo et IA comportementale</span></i><br>
+    <span class="en">2D shooter in Pygame featuring behavioural AI.</span><span class="fr">Jeu de tir 2D en Pygame intégrant des IA comportementales.</span>
+    <ul class="en">
       <li>5-state enemy machine, <b>A*</b> pathfinding, 16-agent swarm (boids), adaptive difficulty; about 3,000 lines, 10 levels.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Pygame, A*, Boids, Behavioural AI</font></td>
+    <ul class="fr">
+      <li>Ennemi à machine à 5 états, recherche de chemin <b>A*</b>, essaim de 16 agents (boids), difficulté adaptative ; environ 3&nbsp;000 lignes, 10 niveaux.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Pygame, A*, Boids, Behavioural AI</span><span class="fr">Mots-clés : Pygame, A*, Boids, IA comportementale</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>tkinter-lab: 8-ball Billiards with a 2D Physics Engine</b></td>
+      <td valign="top"><b><span class="en">tkinter-lab: 8-ball Billiards with a 2D Physics Engine</span><span class="fr">tkinter-lab : billard 8-ball avec moteur physique 2D</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">&nbsp;</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Three Python/Tkinter applications</i><br>
-    Billiards game with a 2D physics engine (collisions, friction), plus a dice simulator and Snake.
-    <ul>
+      <td colspan="2"><i><span class="en">Three Python/Tkinter applications</span><span class="fr">Trois applications Python/Tkinter</span></i><br>
+    <span class="en">Billiards game with a 2D physics engine (collisions, friction), plus a dice simulator and Snake.</span><span class="fr">Jeu de billard avec moteur physique 2D (collisions, frottement), plus un simulateur de dés et un Snake.</span>
+    <ul class="en">
       <li>Explicit integration with 3 sub-steps, ball collisions (restitution ≈ 0.92), <b>exponential friction</b>, first-contact prediction; 2 standalone Windows executables.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: 2D physics, Collisions, Python</font></td>
+    <ul class="fr">
+      <li>Intégration explicite à 3 sous-pas, chocs entre billes (restitution ≈ 0,92), <b>frottement exponentiel</b>, prédiction du premier contact ; 2 exécutables Windows autonomes.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: 2D physics, Collisions, Python</span><span class="fr">Mots-clés : Physique 2D, Collisions, Python</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
 </div>
 
 <div id="grp_misc">
-<h3>Programming fundamentals &amp; other</h3>
+<h3><span class="en">Programming fundamentals &amp; other</span><span class="fr">Bases de programmation et divers</span></h3>
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>C Programming Labs</b></td>
+      <td valign="top"><b><span class="en">C Programming Labs</span><span class="fr">TP de programmation en C</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2022-2023</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Faculty of Sciences and Techniques, Béni Mellal, pair work</i><br>
-    Algorithmics in C: arrays, matrices, Horner scheme, circular queue, linked list.
-    <ul>
+      <td colspan="2"><i><span class="en">Faculty of Sciences and Techniques, Béni Mellal, pair work</span><span class="fr">Faculté des Sciences et Techniques de Béni Mellal, binôme</span></i><br>
+    <span class="en">Algorithmics in C: arrays, matrices, Horner scheme, circular queue, linked list.</span><span class="fr">Algorithmique en C : tableaux, matrices, schéma de Horner, file circulaire, liste chaînée.</span>
+    <ul class="en">
       <li>Programs checked against reference examples; dynamic allocation (malloc, free).</li>
     </ul>
-    <font size="1" color="#666666">Keywords: C, Algorithmics, Pointers</font></td>
+    <ul class="fr">
+      <li>Programmes vérifiés sur des exemples de référence ; allocation dynamique (malloc, free).</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: C, Algorithmics, Pointers</span><span class="fr">Mots-clés : C, Algorithmique, Pointeurs</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>R Programming Labs</b></td>
+      <td valign="top"><b><span class="en">R Programming Labs</span><span class="fr">TP de programmation en R</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">&nbsp;</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>15 exercises</i><br>
-    Matrices, data frames, dplyr, functions and loops in R.
-    <ul>
+      <td colspan="2"><i><span class="en">15 exercises</span><span class="fr">15 exercices</span></i><br>
+    <span class="en">Matrices, data frames, dplyr, functions and loops in R.</span><span class="fr">Matrices, data frames, dplyr, fonctions et boucles en R.</span>
+    <ul class="en">
       <li>Matrix computation, data filtering and sorting, CSV import/export.</li>
     </ul>
-    <font size="1" color="#666666">Keywords: R, dplyr</font></td>
+    <ul class="fr">
+      <li>Calcul matriciel, filtrage et tri de données, import/export CSV.</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: R, dplyr</span><span class="fr">Mots-clés : R, dplyr</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>CESAM Treasury App</b></td>
+      <td valign="top"><b><span class="en">CESAM Treasury App</span><span class="fr">Application de trésorerie de la CESAM</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">&nbsp;</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Python / Kivy</i><br>
-    Desktop application managing membership fees and expenses, with persistent storage.
-    <ul>
+      <td colspan="2"><i><span class="en">Python / Kivy</span><span class="fr">Python / Kivy</span></i><br>
+    <span class="en">Desktop application managing membership fees and expenses, with persistent storage.</span><span class="fr">Application de bureau gérant cotisations et dépenses, avec stockage persistant.</span>
+    <ul class="en">
       <li>Three classes, balance computation, histories and automatic saving (about 280 lines).</li>
     </ul>
-    <font size="1" color="#666666">Keywords: Python, Kivy, OOP</font></td>
+    <ul class="fr">
+      <li>Trois classes, calcul du solde, historiques et sauvegarde automatique (environ 280 lignes).</li>
+    </ul>
+    <font size="1" color="#666666"><span class="en">Keywords: Python, Kivy, OOP</span><span class="fr">Mots-clés : Python, Kivy, POO</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>Beauté Parfumée</b></td>
+      <td valign="top"><b><span class="en">Beauté Parfumée</span><span class="fr">Beauté Parfumée</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">&nbsp;</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>HTML / CSS</i><br>
-    Static catalogue page for 71 perfumes, responsive and without JavaScript.
+      <td colspan="2"><i><span class="en">HTML / CSS</span><span class="fr">HTML / CSS</span></i><br>
+    <span class="en">Static catalogue page for 71 perfumes, responsive and without JavaScript.</span><span class="fr">Page de catalogue statique de 71 parfums, adaptative et sans JavaScript.</span>
     <br>
-    <font size="1" color="#666666">Keywords: HTML5, CSS3</font></td>
+    <font size="1" color="#666666"><span class="en">Keywords: HTML5, CSS3</span><span class="fr">Mots-clés : HTML5, CSS3</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
   <table width="100%" border="0" cellpadding="3" cellspacing="0">
     <tr>
-      <td valign="top"><b>3D Character Modelling in Blender</b></td>
+      <td valign="top"><b><span class="en">3D Character Modelling in Blender</span><span class="fr">Modélisation 3D d'un personnage sous Blender</span></b></td>
       <td valign="top" align="right" width="110" nowrap><font color="#666666">2026</font></td>
     </tr>
     <tr>
-      <td colspan="2"><i>Lab 3</i><br>
-    Character built from front and side blueprints, using Mirror symmetry and surface subdivision.
+      <td colspan="2"><i><span class="en">Lab 3</span><span class="fr">TP3</span></i><br>
+    <span class="en">Character built from front and side blueprints, using Mirror symmetry and surface subdivision.</span><span class="fr">Personnage construit à partir de gabarits de face et de profil, avec symétrie Mirror et subdivision de surface.</span>
     <br>
-    <font size="1" color="#666666">Keywords: Blender, 3D modelling</font></td>
+    <font size="1" color="#666666"><span class="en">Keywords: Blender, 3D modelling</span><span class="fr">Mots-clés : Blender, Modélisation 3D</span></font></td>
     </tr>
   </table>
   <hr size="1" noshade color="#CCCCCC">
@@ -593,35 +714,35 @@ function showGroup(name) {
 <p align="right"><font size="1"><a href="#top">[top]</a></font></p>
 
 <a name="skills"></a>
-<h2>Skills</h2>
+<h2><span class="en">Skills</span><span class="fr">Compétences</span></h2>
   <table width="100%" border="1" bordercolor="#CCCCCC" cellpadding="5" cellspacing="0">
     <tr>
-      <td valign="top" width="140" bgcolor="#EEEEEE"><b>CAD software</b></td>
-      <td valign="top">SolidWorks, Creo, Fusion 360</td>
+      <td valign="top" width="140" bgcolor="#EEEEEE"><b><span class="en">CAD software</span><span class="fr">Logiciels CAO</span></b></td>
+      <td valign="top"><span class="en">SolidWorks, Creo, Fusion 360</span><span class="fr">SolidWorks, Creo, Fusion 360</span></td>
     </tr>
     <tr>
-      <td valign="top" width="140" bgcolor="#EEEEEE"><b>Programming</b></td>
-      <td valign="top">Matlab, C, Python</td>
+      <td valign="top" width="140" bgcolor="#EEEEEE"><b><span class="en">Programming</span><span class="fr">Programmation</span></b></td>
+      <td valign="top"><span class="en">Matlab, C, Python</span><span class="fr">Matlab, C, Python</span></td>
     </tr>
     <tr>
-      <td valign="top" width="140" bgcolor="#EEEEEE"><b>Office</b></td>
-      <td valign="top">Microsoft Office (Word, Excel, PowerPoint)</td>
+      <td valign="top" width="140" bgcolor="#EEEEEE"><b><span class="en">Office</span><span class="fr">Bureautique</span></b></td>
+      <td valign="top"><span class="en">Microsoft Office (Word, Excel, PowerPoint)</span><span class="fr">Pack Office (Word, Excel, PowerPoint)</span></td>
     </tr>
     <tr>
-      <td valign="top" width="140" bgcolor="#EEEEEE"><b>Other tools</b></td>
-      <td valign="top">Power BI</td>
+      <td valign="top" width="140" bgcolor="#EEEEEE"><b><span class="en">Other tools</span><span class="fr">Autres outils</span></b></td>
+      <td valign="top"><span class="en">Power BI</span><span class="fr">Power BI</span></td>
     </tr>
     <tr>
-      <td valign="top" width="140" bgcolor="#EEEEEE"><b>Languages</b></td>
-      <td valign="top">French (native), English (B2)</td>
+      <td valign="top" width="140" bgcolor="#EEEEEE"><b><span class="en">Languages</span><span class="fr">Langues</span></b></td>
+      <td valign="top"><span class="en">French (native), English (B2)</span><span class="fr">Français (natif), anglais (B2)</span></td>
     </tr>
     <tr>
-      <td valign="top" width="140" bgcolor="#EEEEEE"><b>Soft skills</b></td>
-      <td valign="top">Rigour and analytical mind, autonomy and curiosity, intercultural adaptability, team spirit, emotional intelligence</td>
+      <td valign="top" width="140" bgcolor="#EEEEEE"><b><span class="en">Soft skills</span><span class="fr">Savoir-être</span></b></td>
+      <td valign="top"><span class="en">Rigour and analytical mind, autonomy and curiosity, intercultural adaptability, team spirit, emotional intelligence</span><span class="fr">Rigueur et esprit d'analyse, autonomie et curiosité, adaptabilité interculturelle, sens du collectif, intelligence émotionnelle</span></td>
     </tr>
     <tr>
-      <td valign="top" width="140" bgcolor="#EEEEEE"><b>Interests</b></td>
-      <td valign="top">Personal development, cooking and travel</td>
+      <td valign="top" width="140" bgcolor="#EEEEEE"><b><span class="en">Interests</span><span class="fr">Centres d'intérêt</span></b></td>
+      <td valign="top"><span class="en">Personal development, cooking and travel</span><span class="fr">Développement personnel, cuisine et voyage</span></td>
     </tr>
   </table>
 <p align="right"><font size="1"><a href="#top">[top]</a></font></p>
@@ -629,10 +750,10 @@ function showGroup(name) {
 <a name="certifications"></a>
 <h2>Certifications</h2>
 <ul>
-  <li>Brevet Premiers secours de la planète, Institut de l'Engagement and CNRS, 2026</li>
+  <li><span class="en">Brevet Premiers secours de la planète, Institut de l'Engagement and CNRS, 2026</span><span class="fr">Brevet Premiers secours de la planète, Institut de l'Engagement et CNRS, 2026</span></li>
   <li>Fundamentals of Reinforcement Learning, University of Alberta, 2025</li>
   <li>Neural Networks, DeepLearning.AI, 2024</li>
-  <li>Python Programming Certification, CESAM Béni Mellal, 2023</li>
+  <li><span class="en">Python Programming Certification, CESAM Béni Mellal, 2023</span><span class="fr">Certification Python Programming, CESAM Béni Mellal, 2023</span></li>
 </ul>
 <p align="right"><font size="1"><a href="#top">[top]</a></font></p>
 
